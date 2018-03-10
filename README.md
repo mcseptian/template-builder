@@ -1,8 +1,10 @@
 # template-blogger
-Template for [Black Forest] (https://mcseptian.blogspot.co.id/)
+## simple basic featuring bootstrap 4 & fontawesome 5 
+Template for [Black Forest](https://mcseptian.blogspot.co.id/)
 
 ## Dependency
-[Bootstrap] (https://github.com/twbs/bootstrap)
+- [Bootstrap 4](https://github.com/twbs/bootstrap)
+- [Font Awesome 5](https://github.com/FortAwesome/Font-Awesome)
 
 ## Widget 
 - Daftar Halaman 
