@@ -229,9 +229,7 @@
       margin-bottom: 15px;
       padding-left: 30px;
     }
-    .comments .title::before {
-      content: "\f075";
-    }
+    .comments .title::before {}
     .comment-form {
       border: 2px solid #007BFF;
       padding: 15px;
@@ -294,8 +292,6 @@
     }
     .comment-actions > a::after {
       visibility: visible;
-      content: "\f112";
-      font-family: FontAwesome;
       font-style: normal;
       font-weight: normal;
       text-decoration: inherit;
@@ -361,11 +357,9 @@
       font-weight: 600;
     }
     .widget.BlogArchive #ArchiveList ul.flat li.archivedate .post-count:before {
-      content: "\00a0\0028";
       font-weight: 400;
     }
     .widget.BlogArchive #ArchiveList ul.flat li.archivedate .post-count:after {
-      content: "\0029";
       font-weight: 400;
     }
     #ArchiveList ul > li .hierarchy-content ul > li .hierarchy-content ul > li {
@@ -644,8 +638,6 @@
       .blog-pager-older-link:after,
       .blog-pager-newer-link:after {
         visibility: visible;
-        content: "\f061";
-        font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
         text-decoration: inherit;
@@ -655,7 +647,6 @@
         right: 0;
       }
       .blog-pager-newer-link:after {
-        content: "\f060";
         left: 0;
       }
       .post-outer {
@@ -1179,6 +1170,7 @@
           <b:includable id='nextPageLink'>
             <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
               <data:messages.olderPosts/>
+		    <i class="fas fa-angle-right">  </i>  
             </a>
           </b:includable>
           <b:includable id='post' var='post'>
@@ -1306,8 +1298,9 @@
             </b:if>
           </b:includable>
           <b:includable id='previousPageLink'>
-            <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
-              <data:messages.newerPosts/>
+            <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>              
+		    <i class="fas fa-angle-left">  </i>
+		<data:messages.newerPosts/>
             </a>
           </b:includable>
           <b:includable id='threadedCommentForm' var='post'>
