@@ -820,7 +820,7 @@
       <b:includable id='bootstrapNavbarSearchForm'>
         <form action='/search/max-results=10' class='form-inline my-2 my-lg-0' method='get'>
           <input aria-label='Search' class='form-control mr-sm-2' name='q' placeholder='Search' type='search'/>
-          <button class='btn btn-primary my-2 my-sm-0' type='submit'><span class='fa fa-search fa-fw'/></button>
+          <button class='btn btn-light my-2 my-sm-0' type='submit'><span class='fa fa-search fa-fw'/></button>
         </form>
       </b:includable>
       <b:includable id='bootstrapNavbarToggler'>
