@@ -810,6 +810,8 @@
         <b:widget-setting name='homeTitle'>Home</b:widget-setting>
       </b:widget-settings>
       <b:includable id='main'>
+        <b:include name='widget-title'/>
+        <br/>  <!-- ADD SPACE FOR CAROUSEL IF TITLE DOESN'T EXIST -->  <br/>
         <b:include name='content'/>
       </b:includable>
       <b:includable id='bootstrapNavbarBrand'>
