@@ -861,7 +861,7 @@
         </li>
       </b:includable>
       <b:includable id='pageList'>
-        <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <nav class='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
           <b:include name='bootstrapNavbarBrand'/>
           <b:include name='bootstrapNavbarToggler'/>
 
