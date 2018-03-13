@@ -5,11 +5,16 @@ Template for [Black Forest](https://mcseptian.blogspot.co.id/)
 ## Dependency
 - [Bootstrap 4](https://github.com/twbs/bootstrap)
 - [Font Awesome 5](https://github.com/FortAwesome/Font-Awesome)
+- [Classiejs](https://github.com/desandro/classie)
+- [Modernizr](https://github.com/Modernizr/Modernizr)
+- [Highlightjs](https://github.com/isagalaev/highlight.js)
 
-## Widget 
-- Daftar Halaman 
+## Widget `included in theme`
+- Page List
 - Post
-- Search `included in theme`
+- Search
+- Overlay Navigation
+- Syntax Highlight
 
 ## Copyright and license
 
