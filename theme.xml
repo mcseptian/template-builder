@@ -9,26 +9,167 @@
   <!-- BOOTSTRAP v4.0.0 CSS -->
   <link crossorigin='anonymous' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' rel='stylesheet'/>
   
-	<style>
-      a {
-			text-decoration: none;
-			color: #657786;
-			transition: color .3s ease-in-out;
-			background-color:transparent;
- 			-webkit-text-decoration-skip:objects
-		}
-      a:hover {
-			text-decoration: none;
-			color: #000;
-			transition: color .3s ease-in-out;
-			background-color:transparent;
- 			-webkit-text-decoration-skip:objects
-		}
-	</style>
+  <!-- My own style, include is optional -->
+  <style>
+     a {
+        text-decoration: none;
+        color: #657786;
+        transition: color .3s ease-in-out;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects
+      }
 
+      a:hover {
+        text-decoration: none;
+        color: #000;
+        transition: color .3s ease-in-out;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects
+      }
+
+      blockquote {
+        border: 1px dashed #000000;
+        padding: 1.625em 1.625em 1.425em 1.625em;
+        quotes: &quot;\201C&quot;&quot;\201D&quot;&quot;\2018&quot;&quot;\2019&quot;;
+        position: relative;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 1.5em;
+      }
+      inline-ad{
+    background: light-grey;
+    }
+      inline-ad-placeholder{
+        font-size: 12px;
+        line-height: 20px;
+        color: #efefef;		
+    }
+      pre {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        overflow: auto;
+        overflow-y: hidden;
+        line-height: 20px;
+        border: 1px solid #777;
+        background: url(lines.png) repeat 0 0;
+        padding: 10px;
+      }
+
+      @media print {
+        pre {
+          overflow-x: auto;
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap !important;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+          background: #fff;
+        }
+      }
+  </style>
+
+  <!-- Overlay style, include is optional -->
+  <style>
+      /* Overlay style */
+      .overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: black;
+      }
+
+      /* Overlay closing cross */
+      .overlay .overlay-close {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        right: 5%;
+        top: 20%;
+        overflow: hidden;
+        border: none;
+        color: white;
+        outline: none;
+        z-index: 100;
+      }
+
+      /* Menu style */
+      .overlay nav {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        height: 60%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+
+      .overlay ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        display: inline-block;
+        height: 100%;
+        position: relative;
+      }
+
+      .overlay ul li {
+        display: block;
+        height: 20%;
+        height: calc(100% / 5);
+        min-height: 54px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .overlay ul li a {
+        font-size: 54px;
+        font-weight: 300;
+        display: block;
+        color: #fff;
+        -webkit-transition: color 0.2s;
+        transition: color 0.2s;
+      }
+
+      .overlay ul li a:hover,
+      .overlay ul li a:focus {
+        color: #e3fcb1;
+      }
+
+      /* Effects */
+      .overlay-slidedown {
+        visibility: hidden;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        -webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
+        transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+      }
+
+      .overlay-slidedown.open {
+        visibility: visible;
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        -webkit-transition: -webkit-transform 0.4s ease-in-out;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      @media screen and (max-height: 30.5em) {
+        .overlay nav {
+          height: 70%;
+          font-size: 34px;
+        }
+        .overlay ul li {
+          min-height: 34px;
+        }
+      }
+    </style>
   <!-- FONT AWESOME -->
   <script defer='defer' src='https://use.fontawesome.com/releases/v5.0.8/js/all.js'/>
-  
+  <!-- highlight.js to your syntax highlighting, include is optional -->
+  <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css' rel='stylesheet'/>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js'/>
+  <script>hljs.initHighlightingOnLoad();</script>
   <b:skin version='1.1.0'><![CDATA[/*
 
     body {}
@@ -815,7 +956,7 @@
         <b:include name='content'/>
       </b:includable>
       <b:includable id='bootstrapNavbarBrand'>
-        <a expr:class='&quot;navbar-brand&quot;' expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+        <a expr:class='&quot;navbar-brand&quot;' href='#' id='trigger-overlay'><data:blog.title/></a>
       </b:includable>
       <b:includable id='bootstrapNavbarSearchForm'>
         <form action='/search/max-results=10' class='form-inline my-2 my-lg-0' method='get'>
@@ -1405,7 +1546,147 @@
     </div><!-- .container-->
   </div><!-- .site-footer -->
   <!-- BLOG FOOTER -->
+  <!-- BLOG OVERLAY -->
+		<div class='overlay overlay-slidedown'>
+			<div class='overlay-close'><i class='fas fa-arrow-up fa-fw fa-4x'/></div>
+			<nav>
+				<ul class='list-inline-group'>
+					<li class='list-inline-item'/>
+					<li class='list-inline-item'><a expr:href='data:blog.homepageUrl'>Home</a></li>
+					<li class='list-inline-item'><a expr:href='data:blog.homepageUrl + &quot;p/content.html&quot;'>About</a></li>
+					<li class='list-inline-item'><a expr:href='data:blog.homepageUrl + &quot;p/contact.html&quot;'>Email Me</a></li>
+					<li class='list-inline-item'/>			
+					<div class='lead mark'>&#169; Septian Adi<br/></div>
+				</ul>
+			</nav>          
+		</div>
+    <script>
+    /* Modernizr 2.7.1 (Custom Build) | MIT &amp; BSD
+     * Build: http://modernizr.com/download/#-csstransitions-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load
+     */
+    ;window.Modernizr=function(a,b,c){function x(a){j.cssText=a}function y(a,b){return x(prefixes.join(a+&quot;;&quot;)+(b||&quot;&quot;))}function z(a,b){return typeof a===b}function A(a,b){return!!~(&quot;&quot;+a).indexOf(b)}function B(a,b){for(var d in a){var e=a[d];if(!A(e,&quot;-&quot;)&amp;&amp;j[e]!==c)return b==&quot;pfx&quot;?e:!0}return!1}function C(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:z(f,&quot;function&quot;)?f.bind(d||b):f}return!1}function D(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+&quot; &quot;+n.join(d+&quot; &quot;)+d).split(&quot; &quot;);return z(b,&quot;string&quot;)||z(b,&quot;undefined&quot;)?B(e,b):(e=(a+&quot; &quot;+o.join(d+&quot; &quot;)+d).split(&quot; &quot;),C(e,b,c))}var d=&quot;2.7.1&quot;,e={},f=!0,g=b.documentElement,h=&quot;modernizr&quot;,i=b.createElement(h),j=i.style,k,l={}.toString,m=&quot;Webkit Moz O ms&quot;,n=m.split(&quot; &quot;),o=m.toLowerCase().split(&quot; &quot;),p={},q={},r={},s=[],t=s.slice,u,v={}.hasOwnProperty,w;!z(v,&quot;undefined&quot;)&amp;&amp;!z(v.call,&quot;undefined&quot;)?w=function(a,b){return v.call(a,b)}:w=function(a,b){return b in a&amp;&amp;z(a.constructor.prototype[b],&quot;undefined&quot;)},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!=&quot;function&quot;)throw new TypeError;var d=t.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(t.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(t.call(arguments)))};return e}),p.csstransitions=function(){return D(&quot;transition&quot;)};for(var E in p)w(p,E)&amp;&amp;(u=E.toLowerCase(),e[u]=p[E](),s.push((e[u]?&quot;&quot;:&quot;no-&quot;)+u));return e.addTest=function(a,b){if(typeof a==&quot;object&quot;)for(var d in a)w(a,d)&amp;&amp;e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b==&quot;function&quot;?b():b,typeof f!=&quot;undefined&quot;&amp;&amp;f&amp;&amp;(g.className+=&quot; &quot;+(b?&quot;&quot;:&quot;no-&quot;)+a),e[a]=b}return e},x(&quot;&quot;),i=k=null,function(a,b){function l(a,b){var c=a.createElement(&quot;p&quot;),d=a.getElementsByTagName(&quot;head&quot;)[0]||a.documentElement;return c.innerHTML=&quot;x&lt;style&gt;&quot;+b+&quot;&lt;/style&gt;&quot;,d.insertBefore(c.lastChild,d.firstChild)}function m(){var a=s.elements;return typeof a==&quot;string&quot;?a.split(&quot; &quot;):a}function n(a){var b=j[a[h]];return b||(b={},i++,a[h]=i,j[i]=b),b}function o(a,c,d){c||(c=b);if(k)return c.createElement(a);d||(d=n(c));var g;return d.cache[a]?g=d.cache[a].cloneNode():f.test(a)?g=(d.cache[a]=d.createElem(a)).cloneNode():g=d.createElem(a),g.canHaveChildren&amp;&amp;!e.test(a)&amp;&amp;!g.tagUrn?d.frag.appendChild(g):g}function p(a,c){a||(a=b);if(k)return a.createDocumentFragment();c=c||n(a);var d=c.frag.cloneNode(),e=0,f=m(),g=f.length;for(;e&lt;g;e++)d.createElement(f[e]);return d}function q(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return s.shivMethods?o(c,a,b):b.createElem(c)},a.createDocumentFragment=Function(&quot;h,f&quot;,&quot;return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&amp;&amp;(&quot;+m().join().replace(/[\w\-]+/g,function(a){return b.createElem(a),b.frag.createElement(a),&#39;c(&quot;&#39;+a+&#39;&quot;)&#39;})+&quot;);return n}&quot;)(s,b.frag)}function r(a){a||(a=b);var c=n(a);return s.shivCSS&amp;&amp;!g&amp;&amp;!c.hasCSS&amp;&amp;(c.hasCSS=!!l(a,&quot;article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}&quot;)),k||q(a,c),a}var c=&quot;3.7.0&quot;,d=a.html5||{},e=/^&lt;|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,f=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,g,h=&quot;_html5shiv&quot;,i=0,j={},k;(function(){try{var a=b.createElement(&quot;a&quot;);a.innerHTML=&quot;&lt;xyz&gt;&lt;/xyz&gt;&quot;,g=&quot;hidden&quot;in a,k=a.childNodes.length==1||function(){b.createElement(&quot;a&quot;);var a=b.createDocumentFragment();return typeof a.cloneNode==&quot;undefined&quot;||typeof a.createDocumentFragment==&quot;undefined&quot;||typeof a.createElement==&quot;undefined&quot;}()}catch(c){g=!0,k=!0}})();var s={elements:d.elements||&quot;abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video&quot;,version:c,shivCSS:d.shivCSS!==!1,supportsUnknownElements:k,shivMethods:d.shivMethods!==!1,type:&quot;default&quot;,shivDocument:r,createElement:o,createDocumentFragment:p};a.html5=s,r(b)}(this,b),e._version=d,e._domPrefixes=o,e._cssomPrefixes=n,e.testProp=function(a){return B([a])},e.testAllProps=D,e.prefixed=function(a,b,c){return b?D(a,b,c):D(a,&quot;pfx&quot;)},g.className=g.className.replace(/(^|\s)no-js(\s|$)/,&quot;$1$2&quot;)+(f?&quot; js &quot;+s.join(&quot; &quot;):&quot;&quot;),e}(this,this.document),function(a,b,c){function d(a){return&quot;[object Function]&quot;==o.call(a)}function e(a){return&quot;string&quot;==typeof a}function f(){}function g(a){return!a||&quot;loaded&quot;==a||&quot;complete&quot;==a||&quot;uninitialized&quot;==a}function h(){var a=p.shift();q=1,a?a.t?m(function(){(&quot;c&quot;==a.t?B.injectCss:B.injectJs)(a.s,0,a.a,a.x,a.e,1)},0):(a(),h()):q=0}function i(a,c,d,e,f,i,j){function k(b){if(!o&amp;&amp;g(l.readyState)&amp;&amp;(u.r=o=1,!q&amp;&amp;h(),l.onload=l.onreadystatechange=null,b)){&quot;img&quot;!=a&amp;&amp;m(function(){t.removeChild(l)},50);for(var d in y[c])y[c].hasOwnProperty(d)&amp;&amp;y[c][d].onload()}}var j=j||B.errorTimeout,l=b.createElement(a),o=0,r=0,u={t:d,s:c,e:f,a:i,x:j};1===y[c]&amp;&amp;(r=1,y[c]=[]),&quot;object&quot;==a?l.data=c:(l.src=c,l.type=a),l.width=l.height=&quot;0&quot;,l.onerror=l.onload=l.onreadystatechange=function(){k.call(this,r)},p.splice(e,0,u),&quot;img&quot;!=a&amp;&amp;(r||2===y[c]?(t.insertBefore(l,s?null:n),m(k,j)):y[c].push(l))}function j(a,b,c,d,f){return q=0,b=b||&quot;j&quot;,e(a)?i(&quot;c&quot;==b?v:u,a,b,this.i++,c,d,f):(p.splice(this.i++,0,a),1==p.length&amp;&amp;h()),this}function k(){var a=B;return a.loader={load:j,i:0},a}var l=b.documentElement,m=a.setTimeout,n=b.getElementsByTagName(&quot;script&quot;)[0],o={}.toString,p=[],q=0,r=&quot;MozAppearance&quot;in l.style,s=r&amp;&amp;!!b.createRange().compareNode,t=s?l:n.parentNode,l=a.opera&amp;&amp;&quot;[object Opera]&quot;==o.call(a.opera),l=!!b.attachEvent&amp;&amp;!l,u=r?&quot;object&quot;:l?&quot;script&quot;:&quot;img&quot;,v=l?&quot;script&quot;:u,w=Array.isArray||function(a){return&quot;[object Array]&quot;==o.call(a)},x=[],y={},z={timeout:function(a,b){return b.length&amp;&amp;(a.timeout=b[0]),a}},A,B;B=function(a){function b(a){var a=a.split(&quot;!&quot;),b=x.length,c=a.pop(),d=a.length,c={url:c,origUrl:c,prefixes:a},e,f,g;for(f=0;f&lt;d;f++)g=a[f].split(&quot;=&quot;),(e=z[g.shift()])&amp;&amp;(c=e(c,g));for(f=0;f&lt;b;f++)c=x[f](c);return c}function g(a,e,f,g,h){var i=b(a),j=i.autoCallback;i.url.split(&quot;.&quot;).pop().split(&quot;?&quot;).shift(),i.bypass||(e&amp;&amp;(e=d(e)?e:e[a]||e[g]||e[a.split(&quot;/&quot;).pop().split(&quot;?&quot;)[0]]),i.instead?i.instead(a,e,f,g,h):(y[i.url]?i.noexec=!0:y[i.url]=1,f.load(i.url,i.forceCSS||!i.forceJS&amp;&amp;&quot;css&quot;==i.url.split(&quot;.&quot;).pop().split(&quot;?&quot;).shift()?&quot;c&quot;:c,i.noexec,i.attrs,i.timeout),(d(e)||d(j))&amp;&amp;f.load(function(){k(),e&amp;&amp;e(i.origUrl,h,g),j&amp;&amp;j(i.origUrl,h,g),y[i.url]=2})))}function h(a,b){function c(a,c){if(a){if(e(a))c||(j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}),g(a,j,b,0,h);else if(Object(a)===a)for(n in m=function(){var b=0,c;for(c in a)a.hasOwnProperty(c)&amp;&amp;b++;return b}(),a)a.hasOwnProperty(n)&amp;&amp;(!c&amp;&amp;!--m&amp;&amp;(d(j)?j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}:j[n]=function(a){return function(){var b=[].slice.call(arguments);a&amp;&amp;a.apply(this,b),l()}}(k[n])),g(a[n],j,b,n,h))}else!c&amp;&amp;l()}var h=!!a.test,i=a.load||a.both,j=a.callback||f,k=j,l=a.complete||f,m,n;c(h?a.yep:a.nope,!!i),i&amp;&amp;c(i)}var i,j,l=this.yepnope.loader;if(e(a))g(a,0,l,0);else if(w(a))for(i=0;i&lt;a.length;i++)j=a[i],e(j)?g(j,0,l,0):w(j)?B(j):Object(j)===j&amp;&amp;h(j,l);else Object(a)===a&amp;&amp;h(a,l)},B.addPrefix=function(a,b){z[a]=b},B.addFilter=function(a){x.push(a)},B.errorTimeout=1e4,null==b.readyState&amp;&amp;b.addEventListener&amp;&amp;(b.readyState=&quot;loading&quot;,b.addEventListener(&quot;DOMContentLoaded&quot;,A=function(){b.removeEventListener(&quot;DOMContentLoaded&quot;,A,0),b.readyState=&quot;complete&quot;},0)),a.yepnope=k(),a.yepnope.executeStack=h,a.yepnope.injectJs=function(a,c,d,e,i,j){var k=b.createElement(&quot;script&quot;),l,o,e=e||B.errorTimeout;k.src=a;for(o in d)k.setAttribute(o,d[o]);c=j?h:c||f,k.onreadystatechange=k.onload=function(){!l&amp;&amp;g(k.readyState)&amp;&amp;(l=1,c(),k.onload=k.onreadystatechange=null)},m(function(){l||(l=1,c(1))},e),i?k.onload():n.parentNode.insertBefore(k,n)},a.yepnope.injectCss=function(a,c,d,e,g,i){var e=b.createElement(&quot;link&quot;),j,c=i?h:c||f;e.href=a,e.rel=&quot;stylesheet&quot;,e.type=&quot;text/css&quot;;for(j in d)e.setAttribute(j,d[j]);g||(n.parentNode.insertBefore(e,n),m(c,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))};
+    (function() {
+    	var triggerBttn = document.getElementById( &#39;trigger-overlay&#39; ),
+    		overlay = document.querySelector( &#39;div.overlay&#39; ),
+    		closeBttn = overlay.querySelector( &#39;div.overlay-close&#39; );
+    		transEndEventNames = {
+    			&#39;WebkitTransition&#39;: &#39;webkitTransitionEnd&#39;,
+    			&#39;MozTransition&#39;: &#39;transitionend&#39;,
+    			&#39;OTransition&#39;: &#39;oTransitionEnd&#39;,
+    			&#39;msTransition&#39;: &#39;MSTransitionEnd&#39;,
+    			&#39;transition&#39;: &#39;transitionend&#39;
+    		},
+    		transEndEventName = transEndEventNames[ Modernizr.prefixed( &#39;transition&#39; ) ],
+    		support = { transitions : Modernizr.csstransitions };
 
+    	function toggleOverlay() {
+    		if( classie.has( overlay, &#39;open&#39; ) ) {
+    			classie.remove( overlay, &#39;open&#39; );
+    			classie.add( overlay, &#39;close&#39; );
+    			var onEndTransitionFn = function( ev ) {
+    				if( support.transitions ) {
+    					if( ev.propertyName !== &#39;visibility&#39; ) return;
+    					this.removeEventListener( transEndEventName, onEndTransitionFn );
+    				}
+    				classie.remove( overlay, &#39;close&#39; );
+    			};
+    			if( support.transitions ) {
+    				overlay.addEventListener( transEndEventName, onEndTransitionFn );
+    			}
+    			else {
+    				onEndTransitionFn();
+    			}
+    		}
+    		else if( !classie.has( overlay, &#39;close&#39; ) ) {
+    			classie.add( overlay, &#39;open&#39; );
+    		}
+    	}
+
+    	triggerBttn.addEventListener( &#39;click&#39;, toggleOverlay );
+    	closeBttn.addEventListener( &#39;click&#39;, toggleOverlay );
+    })();
+    /*!
+     * classie - class helper functions
+     * from bonzo https://github.com/ded/bonzo
+     * 
+     * classie.has( elem, &#39;my-class&#39; ) -&gt; true/false
+     * classie.add( elem, &#39;my-new-class&#39; )
+     * classie.remove( elem, &#39;my-unwanted-class&#39; )
+     * classie.toggle( elem, &#39;my-class&#39; )
+     */
+
+    /*jshint browser: true, strict: true, undef: true */
+    /*global define: false */
+
+    ( function( window ) {
+
+    &#39;use strict&#39;;
+
+    // class helper functions from bonzo https://github.com/ded/bonzo
+
+    function classReg( className ) {
+      return new RegExp(&quot;(^|\\s+)&quot; + className + &quot;(\\s+|$)&quot;);
+    }
+
+    // classList support for class management
+    // altho to be fair, the api sucks because it won&#39;t accept multiple classes at once
+    var hasClass, addClass, removeClass;
+
+    if ( &#39;classList&#39; in document.documentElement ) {
+      hasClass = function( elem, c ) {
+        return elem.classList.contains( c );
+      };
+      addClass = function( elem, c ) {
+        elem.classList.add( c );
+      };
+      removeClass = function( elem, c ) {
+        elem.classList.remove( c );
+      };
+    }
+    else {
+      hasClass = function( elem, c ) {
+        return classReg( c ).test( elem.className );
+      };
+      addClass = function( elem, c ) {
+        if ( !hasClass( elem, c ) ) {
+          elem.className = elem.className + &#39; &#39; + c;
+        }
+      };
+      removeClass = function( elem, c ) {
+        elem.className = elem.className.replace( classReg( c ), &#39; &#39; );
+      };
+    }
+
+    function toggleClass( elem, c ) {
+      var fn = hasClass( elem, c ) ? removeClass : addClass;
+      fn( elem, c );
+    }
+
+    var classie = {
+      // full names
+      hasClass: hasClass,
+      addClass: addClass,
+      removeClass: removeClass,
+      toggleClass: toggleClass,
+      // short names
+      has: hasClass,
+      add: addClass,
+      remove: removeClass,
+      toggle: toggleClass
+    };
+
+    // transport
+    if ( typeof define === &#39;function&#39; &amp;&amp; define.amd ) {
+      // AMD
+      define( classie );
+    } else {
+      // browser global
+      window.classie = classie;
+    }
+
+    })( window );
+
+    </script>
   <!-- BOOTSTRAP SCRIPTS -->
     <script crossorigin='anonymous' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' src='https://code.jquery.com/jquery-3.2.1.slim.min.js'/>
     <script crossorigin='anonymous' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'/>
