@@ -15,6 +15,7 @@ Template for [Black Forest](https://mcseptian.blogspot.co.id/)
 - Search
 - Overlay Navigation
 - Syntax Highlight
+- Lainnya cek history...
 
 ## Copyright and license
 
