@@ -1,6 +1,6 @@
 {
   "name": "template-blogger",
-  "description": "template-blogger + with + <3",
+  "description": "build + template + for + blogger + with + <3",
   "version": "1.0.0",
   "keywords": [
     "blogger-cms",
@@ -11,7 +11,7 @@
     "template-blogger",
     "blogspot"
   ],
-  "homepage": "https://mcseptian.github.io/template-blogger",
+  "homepage": "https://github.com/mcseptian/template-blogger",
   "author": "Septian Adi",
   "scripts": {
     "docs-lint": "htmllint --rc docs/.htmllintrc _gh_pages/*.html _gh_pages/**/*.html",
