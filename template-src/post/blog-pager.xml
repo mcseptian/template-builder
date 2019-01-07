@@ -1,0 +1,19 @@
+<nav class='blog-pager d-flex justify-content-between'>
+
+  <a class='blog-pager-newer-link btn btn-secondary' role='button'>
+    <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "#"' name='href'/>
+    <b:class cond='!data:newerPageUrl' name='disabled'/>
+    <data:messages.newer/>
+  </a>
+
+  <a class='blog-pager-home-link btn btn-secondary' expr:href='data:blog.homepageUrl' role='button'>
+    <data:messages.home/>
+  </a>
+
+  <a class='blog-pager-older-link btn btn-secondary' role='button'>
+    <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "#"' name='href'/>
+    <b:class cond='!data:olderPageUrl' name='disabled'/>
+    <data:messages.older/>
+  </a>
+
+</nav>

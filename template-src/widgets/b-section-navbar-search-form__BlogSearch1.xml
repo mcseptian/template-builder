@@ -1,0 +1,13 @@
+<b:widget id='BlogSearch1' locked='true' title='Search' type='BlogSearch' version='2' visible='true'>
+  <b:includable id='main'>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <form class='form-inline' expr:action='data:blog.searchUrl'>
+      <input class='form-control mr-sm-2' expr:aria-label='data:messages.searchThisBlog' expr:placeholder='data:messages.searchThisBlog' name='q' type='text'/>
+      <button class='btn btn-success my-2 my-sm-0' type='submit'><data:messages.search/></button>
+    </form>
+  </b:includable>
+  <b:includable id='searchForm'/>
+  <b:includable id='searchSubmit'/>
+</b:widget>

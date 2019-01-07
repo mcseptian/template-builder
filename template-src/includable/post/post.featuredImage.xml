@@ -1,0 +1,41 @@
+<b:if cond='data:post.featuredImage'>
+  <b:if cond='data:post.featuredImage.isYoutube'>
+    <b:tag cond='data:link' expr:href='data:post.url' name='a'>
+      <img b:whitespace='remove'>
+        <b:class expr:name='data:imageClass'/>
+        <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+        <b:if cond='data:sourceSizes'>
+          <b:attr expr:value='data:sourceSizes' name='sizes'/>
+        </b:if>
+        <b:if cond='data:sourceSet'>
+          <b:attr expr:value='sourceSet(data:post.featuredImage.youtubeMaxResDefaultUrl, data:sourceSet, (data:ratioWidth + ":" + data:ratioHeight))' name='srcset'/>
+        </b:if>
+        <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+      </img>
+    </b:tag>
+  <b:else/>
+    <b:tag cond='data:link' expr:href='data:post.url' name='a'>
+      <img b:whitespace='remove'>
+        <b:class expr:name='data:imageClass'/>
+        <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.featuredImage' name='src'/>
+        <b:if cond='data:sourceSizes'>
+          <b:attr expr:value='data:sourceSizes' name='sizes'/>
+        </b:if>
+        <b:if cond='data:sourceSet'>
+          <b:attr expr:value='sourceSet(data:post.featuredImage, data:sourceSet, (data:ratioWidth + ":" + data:ratioHeight))' name='srcset'/>
+        </b:if>
+        <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+      </img>
+    </b:tag>
+  </b:if>
+<b:else/>
+  <b:if cond='data:noImage'>
+    <b:tag cond='data:link' expr:href='data:post.url' name='a'>
+      <img b:whitespace='remove'>
+        <b:class expr:name='data:imageClass'/>
+        <b:attr expr:value='data:noImage' name='src'/>
+        <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+      </img>
+    </b:tag>
+  </b:if>
+</b:if>

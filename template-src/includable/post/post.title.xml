@@ -1,0 +1,21 @@
+<b:if cond='data:noTitleMessage'>
+  <b:tag cond='data:heading' expr:class='data:headingClass' expr:name='data:heading'>
+    <b:tag b:whitespace='remove' cond='data:link' expr:class='data:linkClass' expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title ? data:post.title : data:messages.noTitle' name='a'>
+      <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+      <b:if cond='data:post.link and data:link'>
+        <i aria-hidden='true' class='fa fa-link ml-2'/>
+      </b:if>
+    </b:tag>
+  </b:tag>
+<b:else/>
+  <b:if cond='data:post.title'>
+    <b:tag cond='data:heading' expr:class='data:headingClass' expr:name='data:heading'>
+      <b:tag b:whitespace='remove' cond='data:link' expr:class='data:linkClass' expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title' name='a'>
+        <data:post.title/>
+        <b:if cond='data:post.link and data:link'>
+          <i aria-hidden='true' class='fa fa-link ml-2'/>
+        </b:if>
+      </b:tag>
+    </b:tag>
+  </b:if>
+</b:if>

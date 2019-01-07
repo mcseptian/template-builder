@@ -1,0 +1,17 @@
+<b:if cond='data:post.author and data:post.author.authorPhoto'>
+  <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
+    <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+      <img expr:alt='data:post.author.name' expr:class='data:imageClass' expr:src='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl'/>
+    </b:tag>
+  <b:else/>
+    <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+      <img expr:alt='data:post.author.name' expr:class='data:imageClass' expr:src='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.author.authorPhoto.image'/>
+    </b:tag>
+  </b:if>
+<b:else/>
+  <b:if cond='data:noImage'>
+    <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+      <img expr:alt='data:post.author.name' expr:class='data:imageClass' expr:src='data:noImage'/>
+    </b:tag>
+  </b:if>
+</b:if>

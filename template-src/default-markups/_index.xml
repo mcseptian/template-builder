@@ -1,0 +1,22 @@
+<b:defaultmarkups>
+  <b:comment>=== Blog Archive ===</b:comment>
+  <!--(bake BlogArchive.xml)-->
+  <b:comment>=== Blog Search ===</b:comment>
+  <!--(bake BlogSearch.xml)-->
+  <b:comment>=== Contact Form ===</b:comment>
+  <!--(bake ContactForm.xml)-->
+  <b:comment>=== Featured Post ===</b:comment>
+  <!--(bake FeaturedPost.xml)-->
+  <b:comment>=== Follow by Email ===</b:comment>
+  <!--(bake FollowByEmail.xml)-->
+  <b:comment>=== Page Header ===</b:comment>
+  <!--(bake Header.xml)-->
+  <b:comment>=== Image ===</b:comment>
+  <!--(bake Image.xml)-->
+  <b:comment>=== Labels ===</b:comment>
+  <!--(bake Label.xml)-->
+  <b:comment>=== Popular Posts ===</b:comment>
+  <!--(bake PopularPosts.xml)-->
+  <b:comment>=== Translate ===</b:comment>
+  <!--(bake Translate.xml)-->
+</b:defaultmarkups>

@@ -1,0 +1,27 @@
+<b:defaultmarkup type='PopularPosts'>
+  <b:includable id='main' var='this'>
+    <b:include name='widget-title'/>
+    <div class='widget-content'>
+      <b:loop index='i' values='data:posts' var='post'>
+        <div class='media'>
+          <b:class cond='data:i != (data:posts.size - 1)' name='mb-3'/>
+          <b:include cond='data:postDisplay.showFeaturedImage' data='{ size: 64, sourceSet: false, sourceSizes: false, ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/64x64/777/eee/?text=?", imageClass: "d-flex mr-3 popular-post-image" }' name='post.featuredImage'/>
+          <div class='media-body'>
+            <b:include data='{ heading: "h5", headingClass: "mb-1 popular-post-title", link: true, linkClass: "popular-post-title-link", noTitleMessage: true }' name='post.title'/>
+            <ul class='list-inline mb-0'>
+              <li class='list-inline-item'>
+                <i aria-hidden='true' class='fa fa-user-circle popular-post-author-icon'/>
+                <b:include data='{ linkClass: "popular-post-author" }' name='post.authorName'/>
+              </li>
+              <li class='list-inline-item'>
+                <i aria-hidden='true' class='fa fa-clock-o popular-post-date-icon'/>
+                <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "popular-post-date" }' name='post.datePublished'/>
+              </li>
+            </ul>
+            <b:include cond='data:postDisplay.showSnippet' data='{ length: 100, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentDivClass: "mt-2 popular-post-snippet" }' name='post.snippet'/>
+          </div>
+        </div>
+      </b:loop>
+    </div>
+  </b:includable>
+</b:defaultmarkup>

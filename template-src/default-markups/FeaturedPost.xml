@@ -1,0 +1,14 @@
+<b:defaultmarkup type='FeaturedPost'>
+  <b:includable id='main' var='this'>
+    <b:include name='widget-title'/>
+    <div class='widget-content'>
+      <b:loop index='i' values='data:posts' var='post'>
+        <b:include cond='data:postDisplay.showFeaturedImage' data='{ size: 512, sourceSet: false, sourceSizes: false, ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/512x512/777/eee/?text=?", imageClass: "d-block img-fluid featured-post-image" }' name='post.featuredImage'/>
+        <b:if cond='data:postDisplay.showTitle and data:postDisplay.showFeaturedImage'><div class='mt-2 featured-post-divider'/></b:if>
+        <b:include cond='data:postDisplay.showTitle' data='{ heading: "h5", headingClass: "mb-0 featured-post-title", link: true, linkClass: "featured-post-title-link", noTitleMessage: false }' name='post.title'/>
+        <b:if cond='(data:postDisplay.showSnippet and data:postDisplay.showTitle) or (data:postDisplay.showSnippet and data:postDisplay.showFeaturedImage)'><div class='mt-2 featured-post-divider'/></b:if>
+        <b:include cond='data:postDisplay.showSnippet' data='{ length: 100, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentDivClass: "featured-post-snippet" }' name='post.snippet'/>
+      </b:loop>
+    </div>
+  </b:includable>
+</b:defaultmarkup>

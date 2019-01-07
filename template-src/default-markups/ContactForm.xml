@@ -1,0 +1,109 @@
+<b:defaultmarkup type='ContactForm'>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      <form expr:id='data:widget.instanceId + "_contact-form"' name='contact-form'>
+        <div class='form-group'>
+          <label class='col-form-label' expr:for='data:widget.instanceId + "_contact-form-name"'><data:contactFormNameMsg/></label>
+          <input class='form-control contact-form-name' expr:id='data:widget.instanceId + "_contact-form-name"' expr:placeholder='data:contactFormNameMsg' name='name' size='30' type='text'/>
+        </div>
+        <div class='form-group'>
+          <label class='col-form-label' expr:for='data:widget.instanceId + "_contact-form-email"'><data:contactFormEmailMsg/> *</label>
+          <input class='form-control contact-form-email' expr:id='data:widget.instanceId + "_contact-form-email"' expr:placeholder='data:contactFormEmailMsg' name='email' required='required' size='30' type='email'/>
+        </div>
+        <div class='form-group'>
+          <label class='col-form-label' expr:for='data:widget.instanceId + "_contact-form-email-message"'><data:contactFormMessageMsg/> *</label>
+          <textarea class='form-control contact-form-email-message' cols='25' expr:id='data:widget.instanceId + "_contact-form-email-message"' expr:placeholder='data:contactFormMessageMsg' name='email-message' required='required' rows='5'/>
+        </div>
+        <div>
+          <style expr:id='data:widget.instanceId + "_style"' scoped='scoped'>
+          /* Button submit */
+
+          #<data:widget.instanceId/>_contact-form .contact-form-button-submit {
+            display: inline-block;
+            font-weight: normal;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+            border: 1px solid transparent;
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.25;
+            border-radius: 0.25rem;
+            transition: all 0.15s ease-in-out;
+          }
+          #<data:widget.instanceId/>_contact-form .contact-form-button-submit:focus,
+          #<data:widget.instanceId/>_contact-form .contact-form-button-submit:hover {
+            text-decoration: none;
+          }
+          #<data:widget.instanceId/>_contact-form .contact-form-button-submit:focus {
+            outline: 0;
+          }
+          #<data:widget.instanceId/>_contact-form .contact-form-button-submit:active {
+            background-image: none;
+          }
+          /* Theme */
+          #<data:widget.instanceId/>_contact-form .contact-form-button-submit {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+          }
+          #<data:widget.instanceId/>_contact-form .contact-form-button-submit:hover {
+            color: #fff;
+            background-color: #218838;
+            border-color: #1e7e34;
+          }
+          #<data:widget.instanceId/>_contact-form .contact-form-button-submit:focus {
+            box-shadow: 0 0 0 3px rgba(40,167,69,.5);
+          }
+          #<data:widget.instanceId/>_contact-form .contact-form-button-submit:active {
+            background-color: #218838;
+            border-color: #1e7e34;
+          }
+
+          /* Message */
+
+          #<data:widget.instanceId/>_contact-form .contact-form-error-message,
+          #<data:widget.instanceId/>_contact-form .contact-form-success-message {
+            display: none;
+          }
+          #<data:widget.instanceId/>_contact-form .contact-form-error-message-with-border,
+          #<data:widget.instanceId/>_contact-form .contact-form-success-message-with-border {
+            display: block;
+            padding: .75rem 1.25rem;
+            margin-top: 1rem;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+          }
+          #<data:widget.instanceId/>_contact-form .contact-form-error-message-with-border img {
+            padding: .38rem;
+            margin-left: .25rem;
+          }
+          #<data:widget.instanceId/>_contact-form .contact-form-error-message-with-border {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebcccc;
+          }
+          #<data:widget.instanceId/>_contact-form .contact-form-success-message-with-border {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d0e9c6;
+          }
+          </style>
+          <button class='contact-form-button-submit' expr:id='data:widget.instanceId + "_contact-form-submit"' type='submit'>
+            <data:contactFormSendMsg/>
+          </button>
+          <div class='contact-form-error-message' expr:id='data:widget.instanceId + "_contact-form-error-message"'/>
+          <div class='contact-form-success-message' expr:id='data:widget.instanceId + "_contact-form-success-message"'/>
+        </div>
+      </form>
+    </div>
+  </b:includable>
+</b:defaultmarkup>

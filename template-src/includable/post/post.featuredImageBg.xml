@@ -1,0 +1,11 @@
+<b:if cond='data:post.featuredImage'>
+  <b:if cond='data:post.featuredImage.isYoutube'>
+    <b:attr expr:value='data:style + " background-image: url(" + (data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.featuredImage.youtubeMaxResDefaultUrl) + ");"' name='style'/>
+  <b:else/>
+    <b:attr expr:value='data:style + " background-image: url(" + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, data:size, (data:ratioWidth + ":" + data:ratioHeight)) : data:post.featuredImage) + ");"' name='style'/>
+  </b:if>
+<b:else/>
+  <b:if cond='data:noImage'>
+    <b:attr expr:value='data:style + " background-image: url(" + data:noImage + ");"' name='style'/>
+  </b:if>
+</b:if>

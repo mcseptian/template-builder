@@ -1,0 +1,19 @@
+<b:if cond='data:post.hasJumpLink'>
+  <div expr:class='data:parentDivClass' expr:id='"More_" + data:widget.instanceId + "_" + data:post.id'>
+    <a b:whitespace='remove' expr:class='data:linkClass' expr:href='fragment(data:post.url, "more")' role='button'>
+      <b:attr name='title' expr:value='data:post.title ? data:post.title : ""'/>
+      <span class='sr-only'>More_<data:widget.instanceId/>_<data:post.id/></span>
+      <data:blog.jumpLinkMessage/>
+    </a>
+  </div>
+<b:else/>
+  <b:if cond='data:post.snippets'>
+    <div expr:class='data:parentDivClass' expr:id='"More_" + data:widget.instanceId + "_" + data:post.id'>
+      <a b:whitespace='remove' expr:class='data:linkClass' expr:href='data:post.url' role='button'>
+        <b:attr name='title' expr:value='data:post.title ? data:post.title : ""'/>
+        <span class='sr-only'>More_<data:widget.instanceId/>_<data:post.id/></span>
+        <data:messages.keepReading/>
+      </a>
+    </div>
+  </b:if>
+</b:if>

@@ -1,0 +1,257 @@
+<div class='blog-posts post-compose-style'>
+
+  <b:comment>=== Homepage ===</b:comment>
+  <b:if cond='data:view.isHomepage'>
+    <b:loop values='data:posts' var='post'>
+      <article class='card mb-3' expr:id='"post-" + data:post.id'>
+
+        <!-- >>> Header <<< -->
+        <b:if cond='data:headerByline.items.notEmpty'>
+          <div class='card-header text-muted'>
+            <!-- headerByline -->
+            <b:include name='post.header'/>
+          </div><!-- /.card-header -->
+        </b:if>
+
+        <!-- >>> Body <<< -->
+        <div class='row no-gutters'>
+          <div class='col-sm-3 col-md-4'>
+            <!-- Featured image -->
+            <div class='card-img-left-wrap-sm'>
+              <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: "100vw", ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: "card-img-left" }' name='post.featuredImage'/>
+            </div><!-- /.card-img-left-wrap-sm -->
+          </div><!-- /col -->
+          <div class='col-sm-9 col-md-8'>
+            <div class='card-body'>
+              <!-- Title -->
+              <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link-light", noTitleMessage: false }' name='post.title'/>
+              <!-- Snippet -->
+              <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentDivClass: "card-text" }' name='post.snippet'/>
+              <!-- Jump link -->
+              <b:include data='{ linkClass: "btn btn-primary", parentDivClass: "mt-2" }' name='post.jumpLink'/>
+            </div><!-- /.card-body -->
+          </div><!-- /col -->
+        </div><!-- /.row -->
+
+        <!-- >>> Footer <<< -->
+        <b:if cond='data:footerBylines.notEmpty'>
+          <div class='card-footer text-muted'>
+            <!-- footerBylines -->
+            <b:include name='post.footer'/>
+          </div><!-- /.card-footer -->
+        </b:if>
+
+      </article><!-- /.card -->
+    </b:loop>
+  </b:if><!-- /Homepage -->
+
+  <b:comment>=== Item page ===</b:comment>
+  <b:if cond='data:view.isPost'>
+    <b:loop values='data:posts' var='post'>
+      <article class='card mb-3' expr:id='"post-" + data:post.id'>
+
+        <!-- >>> Header <<< -->
+        <div class='card-header'>
+          <ul class='list-inline mb-0'>
+            <!-- Author name -->
+            <li class='list-inline-item'>
+              <i aria-hidden='true' class='fa fa-user-circle text-muted'/>
+              <span class='text-muted'><data:messages.postedBy/></span>
+              <b:include data='{ linkClass: "text-secondary" }' name='post.authorName'/>
+            </li>
+            <!-- Date published -->
+            <li class='list-inline-item'>
+              <i aria-hidden='true' class='fa fa-clock-o text-muted'/>
+              <span class='text-muted'><data:messages.on/></span>
+              <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
+            </li>
+            <!-- Share -->
+            <li class="list-inline-item">
+              <b:include data='{ parentDivClass: "dropdown", dropdownToggleLinkClass: "text-secondary", dropdownToggleType: "all", dropdownMenuClass: "dropdown-menu", dropdownItemLinkClass: "dropdown-item", dropdownItemIcon: true }' name='post.share'/>
+            </li>
+          </ul><!-- /.list-inline -->
+        </div><!-- /.card-header -->
+
+        <!-- >>> Body <<< -->
+        <div class='card-body'>
+          <!-- Title -->
+          <b:include data='{ heading: "h1", headingClass: "card-title", link: false, linkClass: "no-class", noTitleMessage: false }' name='post.title'/>
+          <!-- Body -->
+          <b:include data='{ parentDivClass: "card-text" }' name='post.body'/>
+        </div><!-- /.card-body -->
+
+        <!-- >>> Footer <<< -->
+        <div class='card-footer'>
+          <ul class='list-inline mb-0'>
+            <!-- Labels -->
+            <li class='list-inline-item'>
+              <i aria-hidden='true' class='fa fa-tags text-muted'/>
+              <span class='text-muted'><data:messages.labels/>:</span>
+              <b:include data='{ comma: false, maxResults: 12, labelLinkClass: "badge badge-secondary", unlabelledClass: "badge badge-warning" }' name='post.labels'/>
+            </li>
+          </ul><!-- /.list-inline -->
+        </div><!-- /.card-footer -->
+
+      </article><!-- /.card -->
+    </b:loop>
+  </b:if><!-- /Item page -->
+
+  <b:comment>=== Static page ===</b:comment>
+  <b:if cond='data:view.isPage'>
+    <b:loop values='data:posts' var='post'>
+      <article class='card mb-3' expr:id='"post-" + data:post.id'>
+
+        <!-- >>> Body <<< -->
+        <div class='card-body'>
+          <!-- Title -->
+          <b:include data='{ heading: "h1", headingClass: "card-title", link: false, linkClass: "no-class", noTitleMessage: false }' name='post.title'/>
+          <!-- Body -->
+          <b:include data='{ parentDivClass: "card-text" }' name='post.body'/>
+        </div><!-- /.card-body -->
+
+      </article><!-- /.card -->
+    </b:loop>
+  </b:if><!-- /Static page -->
+
+  <b:comment>=== Search (label) page ===</b:comment>
+  <b:if cond='data:view.search.label'>
+    <div class='row'>
+      <b:loop values='data:posts' var='post'>
+        <article class='col-sm-6 mb-3' expr:id='"post-" + data:post.id'>
+          <div class='card h-100'>
+
+            <!-- >>> Image <<< -->
+            <!-- Featured image -->
+            <div class='card-img-top card-img-cover'>
+              <b:include data='{ size: 320, ratioWidth: 320, ratioHeight: 180, noImage: "https://placehold.it/320x180/777/eee/?text=NO+IMAGE", style: "height: 180px;" }' name='post.featuredImageBg'/>
+            </div>
+
+            <!-- >>> Body <<< -->
+            <div class='card-body'>
+              <!-- Title -->
+              <b:include data='{ heading: "h2", headingClass: "card-title h4", link: true, linkClass: "card-title-link-light", noTitleMessage: false }' name='post.title'/>
+              <!-- Date published -->
+              <h6 class='card-subtitle mb-2'>
+                <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
+              </h6>
+              <!-- Snippet -->
+              <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: false, parentDivClass: "card-text" }' name='post.snippet'/>
+              <!-- Jump link -->
+              <b:include data='{ linkClass: "card-link", parentDivClass: "mt-2" }' name='post.jumpLink'/>
+            </div><!-- /.card-body -->
+
+            <!-- >>> Footer <<< -->
+            <div class='card-footer'>
+              <div class='d-flex flex-wrap justify-content-between'>
+                <!-- Author name -->
+                <span>
+                  <i aria-hidden='true' class='fa fa-user-circle text-muted'/>
+                  <b:include data='{ linkClass: "text-secondary" }' name='post.authorName'/>
+                </span>
+                <!-- Number of comments -->
+                <b:if cond='data:post.allowComments'>
+                  <span>
+                    <i aria-hidden='true' class='fa fa-comments text-muted'/>
+                    <b:include data='{ linkClass: "text-secondary" }' name='post.numComments'/>
+                  </span>
+                </b:if>
+              </div><!-- /flex -->
+            </div><!-- /.card-footer -->
+
+          </div><!-- /.card -->
+        </article><!-- /col -->
+      </b:loop>
+    </div><!-- /.row -->
+  </b:if><!-- /Search (label) page -->
+
+  <b:comment>=== Search (query) page ===</b:comment>
+  <b:if cond='data:view.search.query'>
+    <b:loop values='data:posts' var='post'>
+      <article class='card mb-3' expr:id='"post-" + data:post.id'>
+
+        <!-- >>> Body <<< -->
+        <div class='card-body'>
+          <!-- Title -->
+          <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link-light", noTitleMessage: false }' name='post.title'/>
+          <!-- Date published and snippet -->
+          <div class='card-text'>
+            <b:include data='{ customFormat: "MMM dd, YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
+            <span class='text-muted'>-</span>
+            <b:include data='{ length: 150, links: false, linebreaks: false, ellipsis: true, notHasJumpLink: false, parentDivClass: "d-inline" }' name='post.snippet'/>
+          </div><!-- /.card-text -->
+        </div><!-- /.card-body -->
+
+      </article><!-- /.card -->
+    </b:loop>
+  </b:if><!-- /Search (query) page -->
+
+  <b:comment>=== Search (default) page ===</b:comment>
+  <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+    <b:loop values='data:posts' var='post'>
+      <article class='card mb-3' expr:id='"post-" + data:post.id'>
+
+        <!-- >>> Header <<< -->
+        <b:if cond='data:headerByline.items.notEmpty'>
+          <div class='card-header text-muted'>
+            <!-- headerByline -->
+            <b:include name='post.header'/>
+          </div><!-- /.card-header -->
+        </b:if>
+
+        <!-- >>> Body <<< -->
+        <div class='row no-gutters'>
+          <div class='col-sm-3 col-md-4'>
+            <!-- Featured image -->
+            <div class='card-img-left-wrap-sm'>
+              <b:include data='{ size: 256, sourceSet: [256, 512], sourceSizes: "100vw", ratioWidth: 1, ratioHeight: 1, link: true, noImage: "https://placehold.it/256x256/777/eee/?text=NO+IMAGE", imageClass: "card-img-left" }' name='post.featuredImage'/>
+            </div><!-- /.card-img-left-wrap-sm -->
+          </div><!-- /col -->
+          <div class='col-sm-9 col-md-8'>
+            <div class='card-body'>
+              <!-- Title -->
+              <b:include data='{ heading: "h2", headingClass: "card-title", link: true, linkClass: "card-title-link-light", noTitleMessage: false }' name='post.title'/>
+              <!-- Snippet -->
+              <b:include data='{ length: 150, links: true, linebreaks: true, ellipsis: true, notHasJumpLink: true, parentDivClass: "card-text" }' name='post.snippet'/>
+              <!-- Jump link -->
+              <b:include data='{ linkClass: "btn btn-primary", parentDivClass: "mt-2" }' name='post.jumpLink'/>
+            </div><!-- /.card-body -->
+          </div><!-- /col -->
+        </div><!-- /.row -->
+
+        <!-- >>> Footer <<< -->
+        <b:if cond='data:footerBylines.notEmpty'>
+          <div class='card-footer text-muted'>
+            <!-- footerBylines -->
+            <b:include name='post.footer'/>
+          </div><!-- /.card-footer -->
+        </b:if>
+
+      </article><!-- /.card -->
+    </b:loop>
+  </b:if><!-- /Search (default) page -->
+
+  <b:comment>=== Archive page ===</b:comment>
+  <b:if cond='data:view.isArchive'>
+    <table class='table table-striped'>
+      <tbody>
+        <b:loop values='data:posts' var='post'>
+          <tr expr:id='"post-" + data:post.id'>
+            <!-- Date published -->
+            <td class='text-nowrap'>
+              <b:include data='{ customFormat: "dd/MM/YYYY", timeClass: "text-muted" }' name='post.datePublished'/>
+            </td>
+            <!-- Title -->
+            <td>
+              <b:include data='{ heading: false, headingClass: "no-class", link: true, linkClass: "no-class", noTitleMessage: true }' name='post.title'/>
+            </td>
+            <!-- Author name -->
+            <td class='text-nowrap'>
+              <b:include data='{ linkClass: "text-secondary" }' name='post.authorName'/>
+            </td>
+          </tr>
+        </b:loop>
+      </tbody>
+    </table>
+  </b:if><!-- /Archive page -->
+
+</div>

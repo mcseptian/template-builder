@@ -1,0 +1,18 @@
+<b:widget id='HTML4' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'>
+      &lt;p class="text-white"&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      &lt;/p&gt;
+      &lt;p class="text-white"&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      &lt;/p&gt;
+    </b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <div class='widget-content'>
+      <data:content/>
+    </div>
+  </b:includable>
+</b:widget>

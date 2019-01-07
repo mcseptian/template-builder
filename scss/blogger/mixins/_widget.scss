@@ -1,0 +1,55 @@
+//
+// Widget title
+//
+
+@mixin wg-title-variant($color) {
+  > .widget > .title {
+    color: $color;
+  }
+}
+
+
+//
+// Widget box
+//
+
+@mixin wg-box-variant($background, $border) {
+  > .widget {
+    background-color: $background;
+    border-color: $border;
+  }
+}
+
+@mixin wg-box-outline-variant($color) {
+  > .widget {
+    background-color: transparent;
+    border-color: $color;
+  }
+}
+
+
+//
+// Widget panel
+//
+
+@mixin wg-panel-variant($background, $border) {
+  > .widget > .title {
+    background-color: $background;
+    border-color: $border;
+  }
+  > .widget > .widget-content {
+    background-color: $wg-panel-content-bg;
+    border-color: $border;
+  }
+}
+
+@mixin wg-panel-outline-variant($color) {
+  > .widget > .title {
+    background-color: transparent;
+    border-color: $color;
+  }
+  > .widget > .widget-content {
+    background-color: transparent;
+    border-color: $color;
+  }
+}

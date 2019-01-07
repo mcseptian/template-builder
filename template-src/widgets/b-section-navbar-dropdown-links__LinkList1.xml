@@ -1,0 +1,60 @@
+<b:widget id='LinkList1' locked='true' title='Demo' type='LinkList' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='sorting'>NONE</b:widget-setting>
+    <b:widget-setting name='text-0'>Homepage</b:widget-setting>
+    <b:widget-setting name='link-0'>/</b:widget-setting>
+    <b:widget-setting name='text-1'>--- Divider ---</b:widget-setting>
+    <b:widget-setting name='link-1'>0</b:widget-setting>
+    <b:widget-setting name='text-2'>Search (default) page</b:widget-setting>
+    <b:widget-setting name='link-2'>/search</b:widget-setting>
+    <b:widget-setting name='text-3'>--- Divider ---</b:widget-setting>
+    <b:widget-setting name='link-3'>0</b:widget-setting>
+    <b:widget-setting name='text-4'>Search (label) page - yep</b:widget-setting>
+    <b:widget-setting name='link-4'>/search/label/Sample?max-results=12</b:widget-setting>
+    <b:widget-setting name='text-5'>Search (label) page - nope</b:widget-setting>
+    <b:widget-setting name='link-5'>/search/label/Nope?max-results=12</b:widget-setting>
+    <b:widget-setting name='text-6'>--- Divider ---</b:widget-setting>
+    <b:widget-setting name='link-6'>0</b:widget-setting>
+    <b:widget-setting name='text-7'>Search (query) page - yep</b:widget-setting>
+    <b:widget-setting name='link-7'>/search?q=sample</b:widget-setting>
+    <b:widget-setting name='text-8'>Search (query) page - nope</b:widget-setting>
+    <b:widget-setting name='link-8'>/search?q=nope</b:widget-setting>
+    <b:widget-setting name='text-9'>--- Divider ---</b:widget-setting>
+    <b:widget-setting name='link-9'>0</b:widget-setting>
+    <b:widget-setting name='text-10'>Archive page - yep</b:widget-setting>
+    <b:widget-setting name='link-10'>/2017</b:widget-setting>
+    <b:widget-setting name='text-11'>Archive page - nope</b:widget-setting>
+    <b:widget-setting name='link-11'>/1945/08</b:widget-setting>
+    <b:widget-setting name='text-12'>--- Divider ---</b:widget-setting>
+    <b:widget-setting name='link-12'>0</b:widget-setting>
+    <b:widget-setting name='text-13'>Error page</b:widget-setting>
+    <b:widget-setting name='link-13'>/404</b:widget-setting>
+    <b:widget-setting name='text-14'>--- Divider ---</b:widget-setting>
+    <b:widget-setting name='link-14'>0</b:widget-setting>
+    <b:widget-setting name='text-15'>### Header ###</b:widget-setting>
+    <b:widget-setting name='link-15'>Single page</b:widget-setting>
+    <b:widget-setting name='text-16'>Item page</b:widget-setting>
+    <b:widget-setting name='link-16'>/2016/11/sample-blog-post-01.html</b:widget-setting>
+    <b:widget-setting name='text-17'>Static page</b:widget-setting>
+    <b:widget-setting name='link-17'>/p/static-page.html</b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <a aria-expanded='false' aria-haspopup='true' class='nav-link dropdown-toggle' data-toggle='dropdown' expr:id='"dropdownMenu_" + data:widget.instanceId' href='#'>
+      <b:eval expr='data:title ? data:title : "Links"'/>
+    </a>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='dropdown-menu' expr:aria-labelledby='"dropdownMenu_" + data:widget.instanceId'>
+      <b:loop values='data:links' var='link'>
+        <b:if cond='data:link.name == "### Header ###"'>
+          <h6 class='dropdown-header'><data:link.target/></h6>
+        <b:elseif cond='(data:link.name == "--- Divider ---") and (data:link.target == "0")'/>
+          <div class='dropdown-divider'/>
+        <b:else/>
+          <a class='dropdown-item' expr:href='data:link.target'><data:link.name/></a>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:includable>
+</b:widget>

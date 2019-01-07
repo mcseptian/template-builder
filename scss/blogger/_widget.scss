@@ -1,0 +1,920 @@
+//
+// Base class
+//
+
+.wg > .widget {
+  margin-bottom: $wg-margin-bottom;
+}
+
+// Title
+
+.wg > .widget > .title {
+  font-size: $wg-title-font-size;
+  font-weight: $wg-title-font-weight;
+  line-height: $wg-title-line-height;
+}
+
+// Content
+
+.wg > .widget > .widget-content {
+  > :first-child {
+    margin-top: 0;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+//
+// Widget title
+//
+
+// Color
+
+.wg-title-light {
+  @include wg-title-variant($wg-light-color)
+}
+.wg-title-dark {
+  @include wg-title-variant($wg-dark-color)
+}
+.wg-title-white {
+  @include wg-title-variant($wg-white-color)
+}
+.wg-title-black {
+  @include wg-title-variant($wg-black-color)
+}
+.wg-title-blue {
+  @include wg-title-variant($wg-blue-color)
+}
+.wg-title-indigo {
+  @include wg-title-variant($wg-indigo-color)
+}
+.wg-title-purple {
+  @include wg-title-variant($wg-purple-color)
+}
+.wg-title-pink {
+  @include wg-title-variant($wg-pink-color)
+}
+.wg-title-red {
+  @include wg-title-variant($wg-red-color)
+}
+.wg-title-orange {
+  @include wg-title-variant($wg-orange-color)
+}
+.wg-title-yellow {
+  @include wg-title-variant($wg-yellow-color)
+}
+.wg-title-green {
+  @include wg-title-variant($wg-green-color)
+}
+.wg-title-teal {
+  @include wg-title-variant($wg-teal-color)
+}
+.wg-title-cyan {
+  @include wg-title-variant($wg-cyan-color)
+}
+
+// Font size
+
+.wg-title-h1 > .widget > .title {
+  font-size: $wg-title-h1;
+}
+.wg-title-h2 > .widget > .title {
+  font-size: $wg-title-h2;
+}
+.wg-title-h3 > .widget > .title {
+  font-size: $wg-title-h3;
+}
+.wg-title-h4 > .widget > .title {
+  font-size: $wg-title-h4;
+}
+.wg-title-h5 > .widget > .title {
+  font-size: $wg-title-h5;
+}
+.wg-title-h6 > .widget > .title {
+  font-size: $wg-title-h6;
+}
+
+// Alignment
+
+.wg-title-left > .widget > .title {
+  text-align: left;
+}
+.wg-title-center > .widget > .title {
+  text-align: center;
+}
+.wg-title-right > .widget > .title {
+  text-align: right;
+}
+
+// Hide
+
+.wg-title-hide > .widget > .title {
+  display: none !important;
+}
+
+
+//
+// Widget box
+//
+
+.wg-box > .widget {
+  padding: $wg-box-padding;
+  border: $wg-box-border-width solid transparent;
+  @include border-radius($wg-box-border-radius);
+  @include box-shadow($wg-box-box-shadow);
+}
+
+// Title
+
+.wg-box > .widget > .title {
+  margin-bottom: $wg-box-title-margin-bottom;
+}
+
+// Flush list group
+
+.wg-box .widget-content > .list-group-flush {
+  margin-right: -$wg-box-padding;
+  margin-left: -$wg-box-padding;
+}
+
+// Background variations
+
+.wg-box-light {
+  @include wg-box-variant($wg-light-color, $wg-light-border)
+}
+.wg-box-dark {
+  @include wg-box-variant($wg-dark-color, $wg-dark-border)
+}
+.wg-box-white {
+  @include wg-box-variant($wg-white-color, $wg-white-border)
+}
+.wg-box-black {
+  @include wg-box-variant($wg-black-color, $wg-black-border)
+}
+.wg-box-blue {
+  @include wg-box-variant($wg-blue-color, $wg-blue-border)
+}
+.wg-box-indigo {
+  @include wg-box-variant($wg-indigo-color, $wg-indigo-border)
+}
+.wg-box-purple {
+  @include wg-box-variant($wg-purple-color, $wg-purple-border)
+}
+.wg-box-pink {
+  @include wg-box-variant($wg-pink-color, $wg-pink-border)
+}
+.wg-box-red {
+  @include wg-box-variant($wg-red-color, $wg-red-border)
+}
+.wg-box-orange {
+  @include wg-box-variant($wg-orange-color, $wg-orange-border)
+}
+.wg-box-yellow {
+  @include wg-box-variant($wg-yellow-color, $wg-yellow-border)
+}
+.wg-box-green {
+  @include wg-box-variant($wg-green-color, $wg-green-border)
+}
+.wg-box-teal {
+  @include wg-box-variant($wg-teal-color, $wg-teal-border)
+}
+.wg-box-cyan {
+  @include wg-box-variant($wg-cyan-color, $wg-cyan-border)
+}
+
+// Remove all backgrounds
+.wg-box-outline-light {
+  @include wg-box-outline-variant($wg-light-color)
+}
+.wg-box-outline-dark {
+  @include wg-box-outline-variant($wg-dark-color)
+}
+.wg-box-outline-white {
+  @include wg-box-outline-variant($wg-white-color)
+}
+.wg-box-outline-black {
+  @include wg-box-outline-variant($wg-black-color)
+}
+.wg-box-outline-blue {
+  @include wg-box-outline-variant($wg-blue-color)
+}
+.wg-box-outline-indigo {
+  @include wg-box-outline-variant($wg-indigo-color)
+}
+.wg-box-outline-purple {
+  @include wg-box-outline-variant($wg-purple-color)
+}
+.wg-box-outline-pink {
+  @include wg-box-outline-variant($wg-pink-color)
+}
+.wg-box-outline-red {
+  @include wg-box-outline-variant($wg-red-color)
+}
+.wg-box-outline-orange {
+  @include wg-box-outline-variant($wg-orange-color)
+}
+.wg-box-outline-yellow {
+  @include wg-box-outline-variant($wg-yellow-color)
+}
+.wg-box-outline-green {
+  @include wg-box-outline-variant($wg-green-color)
+}
+.wg-box-outline-teal {
+  @include wg-box-outline-variant($wg-teal-color)
+}
+.wg-box-outline-cyan {
+  @include wg-box-outline-variant($wg-cyan-color)
+}
+
+
+//
+// Widget panel
+//
+
+.wg-panel > .widget {
+  @include border-radius($wg-panel-border-radius);
+  @include box-shadow($wg-panel-box-shadow);
+}
+
+// Title
+
+.wg-panel > .widget > .title {
+  padding: $wg-panel-title-padding;
+  margin-bottom: 0;
+  border: $wg-panel-border-width solid transparent;
+  @include border-top-radius($wg-panel-border-radius);
+}
+
+// Content
+
+.wg-panel > .widget > .widget-content {
+  padding: $wg-panel-content-padding;
+  border: $wg-panel-border-width solid transparent;
+  border-top-width: 0;
+  @include border-radius($wg-panel-border-radius);
+  @include border-top-radius(0);
+}
+
+// With `.wg-title-hide` and no title
+.wg-panel.wg-title-hide > .widget > .widget-content,
+.wg-panel > .widget > .widget-content:first-child {
+  border-width: $wg-panel-border-width;
+  @include border-radius($wg-panel-border-radius);
+}
+
+// Smaller
+
+.wg-panel-sm > .widget > .title {
+  padding: $wg-panel-sm-title-padding;
+  font-size: $wg-panel-sm-title-font-size;
+  font-weight: $wg-panel-sm-title-font-weight;
+}
+
+// Group
+
+.wg-panel-group {
+  margin-bottom: $wg-margin-bottom;
+  @include border-radius($wg-panel-border-radius);
+  @include box-shadow($wg-panel-box-shadow);
+}
+
+.wg-panel-group > .widget {
+  margin-bottom: 0 !important;
+  @include border-radius(0 !important);
+  @include box-shadow(none !important);
+
+  // Title
+  &:not(:first-child) > .title {
+    @include border-top-radius(0);
+  }
+  // Content
+  &:not(:last-child) > .widget-content {
+    border-bottom-width: 0;
+    @include border-bottom-radius(0);
+  }
+  // No title
+  &:not(:first-child) > .widget-content:first-child {
+    @include border-top-radius(0);
+  }
+}
+
+// Flush list group
+
+.wg-panel .widget-content > .list-group-flush {
+  margin-right: -$wg-panel-content-padding;
+  margin-left: -$wg-panel-content-padding;
+
+  &:first-child {
+    margin-top: -$wg-panel-content-padding;
+  }
+
+  &:last-child {
+    margin-bottom: -$wg-panel-content-padding;
+
+    .list-group-item:last-child {
+      @include border-bottom-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
+    }
+  }
+}
+
+// With `.wg-title-hide` and no title
+.wg-panel.wg-title-hide .widget-content > .list-group-flush:first-child .list-group-item:first-child,
+.wg-panel .widget-content:first-child > .list-group-flush:first-child .list-group-item:first-child {
+  @include border-top-radius(calc(#{$wg-panel-border-radius} - #{$wg-panel-border-width}));
+}
+// With `.wg-panel-group`
+//scss-lint:disable SelectorDepth
+.wg-panel.wg-panel-group .widget:not(:first-child) .widget-content:first-child > .list-group-flush:first-child .list-group-item:first-child {
+  @include border-top-radius(0); // No title
+}
+.wg-panel.wg-panel-group .widget:not(:last-child) .widget-content > .list-group-flush:last-child .list-group-item:last-child {
+  @include border-bottom-radius(0);
+}
+//scss-lint:enable SelectorDepth
+
+// Background variations
+
+.wg-panel-light {
+  @include wg-panel-variant($wg-light-color, $wg-light-border)
+}
+.wg-panel-dark {
+  @include wg-panel-variant($wg-dark-color, $wg-dark-border)
+}
+.wg-panel-white {
+  @include wg-panel-variant($wg-white-color, $wg-white-border)
+}
+.wg-panel-black {
+  @include wg-panel-variant($wg-black-color, $wg-black-border)
+}
+.wg-panel-blue {
+  @include wg-panel-variant($wg-blue-color, $wg-blue-border)
+}
+.wg-panel-indigo {
+  @include wg-panel-variant($wg-indigo-color, $wg-indigo-border)
+}
+.wg-panel-purple {
+  @include wg-panel-variant($wg-purple-color, $wg-purple-border)
+}
+.wg-panel-pink {
+  @include wg-panel-variant($wg-pink-color, $wg-pink-border)
+}
+.wg-panel-red {
+  @include wg-panel-variant($wg-red-color, $wg-red-border)
+}
+.wg-panel-orange {
+  @include wg-panel-variant($wg-orange-color, $wg-orange-border)
+}
+.wg-panel-yellow {
+  @include wg-panel-variant($wg-yellow-color, $wg-yellow-border)
+}
+.wg-panel-green {
+  @include wg-panel-variant($wg-green-color, $wg-green-border)
+}
+.wg-panel-teal {
+  @include wg-panel-variant($wg-teal-color, $wg-teal-border)
+}
+.wg-panel-cyan {
+  @include wg-panel-variant($wg-cyan-color, $wg-cyan-border)
+}
+
+// Remove all backgrounds
+.wg-panel-outline-light {
+  @include wg-panel-outline-variant($wg-light-color)
+}
+.wg-panel-outline-dark {
+  @include wg-panel-outline-variant($wg-dark-color)
+}
+.wg-panel-outline-white {
+  @include wg-panel-outline-variant($wg-white-color)
+}
+.wg-panel-outline-black {
+  @include wg-panel-outline-variant($wg-black-color)
+}
+.wg-panel-outline-blue {
+  @include wg-panel-outline-variant($wg-blue-color)
+}
+.wg-panel-outline-indigo {
+  @include wg-panel-outline-variant($wg-indigo-color)
+}
+.wg-panel-outline-purple {
+  @include wg-panel-outline-variant($wg-purple-color)
+}
+.wg-panel-outline-pink {
+  @include wg-panel-outline-variant($wg-pink-color)
+}
+.wg-panel-outline-red {
+  @include wg-panel-outline-variant($wg-red-color)
+}
+.wg-panel-outline-orange {
+  @include wg-panel-outline-variant($wg-orange-color)
+}
+.wg-panel-outline-yellow {
+  @include wg-panel-outline-variant($wg-yellow-color)
+}
+.wg-panel-outline-green {
+  @include wg-panel-outline-variant($wg-green-color)
+}
+.wg-panel-outline-teal {
+  @include wg-panel-outline-variant($wg-teal-color)
+}
+.wg-panel-outline-cyan {
+  @include wg-panel-outline-variant($wg-cyan-color)
+}
+
+
+//
+// Widget grid
+//
+
+.wg-1,
+.wg-2,
+.wg-3,
+.wg-4,
+.wg-5,
+.wg-6,
+.wg-7,
+.wg-8,
+.wg-9,
+.wg-10,
+.wg-11,
+.wg-12,
+.wg-sm-1,
+.wg-sm-2,
+.wg-sm-3,
+.wg-sm-4,
+.wg-sm-5,
+.wg-sm-6,
+.wg-sm-7,
+.wg-sm-8,
+.wg-sm-9,
+.wg-sm-10,
+.wg-sm-11,
+.wg-sm-12,
+.wg-md-1,
+.wg-md-2,
+.wg-md-3,
+.wg-md-4,
+.wg-md-5,
+.wg-md-6,
+.wg-md-7,
+.wg-md-8,
+.wg-md-9,
+.wg-md-10,
+.wg-md-11,
+.wg-md-12,
+.wg-lg-1,
+.wg-lg-2,
+.wg-lg-3,
+.wg-lg-4,
+.wg-lg-5,
+.wg-lg-6,
+.wg-lg-7,
+.wg-lg-8,
+.wg-lg-9,
+.wg-lg-10,
+.wg-lg-11,
+.wg-lg-12,
+.wg-xl-1,
+.wg-xl-2,
+.wg-xl-3,
+.wg-xl-4,
+.wg-xl-5,
+.wg-xl-6,
+.wg-xl-7,
+.wg-xl-8,
+.wg-xl-9,
+.wg-xl-10,
+.wg-xl-11,
+.wg-xl-12 {
+  margin-right: -($wg-grid-gutter-width-base / 2);
+  margin-left: -($wg-grid-gutter-width-base / 2);
+
+  @include clearfix;
+
+  .widget {
+    position: relative;
+    min-height: 1px;
+    margin-right: ($wg-grid-gutter-width-base / 2);
+    margin-left: ($wg-grid-gutter-width-base / 2);
+  }
+}
+
+@include media-breakpoint-up(xs) {
+  .wg-1,
+  .wg-2,
+  .wg-3,
+  .wg-4,
+  .wg-5,
+  .wg-6,
+  .wg-7,
+  .wg-8,
+  .wg-9,
+  .wg-10,
+  .wg-11,
+  .wg-12 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &.wg-equal-height-cols {
+      align-items: stretch;
+
+      .widget-content {
+        height: 100%;
+      }
+    }
+
+    .widget {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  .wg-12 .widget {
+    flex: 0 0 calc(100% - #{$wg-grid-gutter-width-base});
+    max-width: calc(100% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-11 .widget {
+    flex: 0 0 calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-10 .widget {
+    flex: 0 0 calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-9 .widget {
+    flex: 0 0 calc(75% - #{$wg-grid-gutter-width-base});
+    max-width: calc(75% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-8 .widget {
+    flex: 0 0 calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-7 .widget {
+    flex: 0 0 calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-6 .widget {
+    flex: 0 0 calc(50% - #{$wg-grid-gutter-width-base});
+    max-width: calc(50% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-5 .widget {
+    flex: 0 0 calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-4 .widget {
+    flex: 0 0 calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-3 .widget {
+    flex: 0 0 calc(25% - #{$wg-grid-gutter-width-base});
+    max-width: calc(25% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-2 .widget {
+    flex: 0 0 calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-1 .widget {
+    flex: 0 0 calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .wg-sm-1,
+  .wg-sm-2,
+  .wg-sm-3,
+  .wg-sm-4,
+  .wg-sm-5,
+  .wg-sm-6,
+  .wg-sm-7,
+  .wg-sm-8,
+  .wg-sm-9,
+  .wg-sm-10,
+  .wg-sm-11,
+  .wg-sm-12 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &.wg-equal-height-cols {
+      align-items: stretch;
+
+      .widget-content {
+        height: 100%;
+      }
+    }
+
+    .widget {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  .wg-sm-12 .widget {
+    flex: 0 0 calc(100% - #{$wg-grid-gutter-width-base});
+    max-width: calc(100% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-11 .widget {
+    flex: 0 0 calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-10 .widget {
+    flex: 0 0 calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-9 .widget {
+    flex: 0 0 calc(75% - #{$wg-grid-gutter-width-base});
+    max-width: calc(75% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-8 .widget {
+    flex: 0 0 calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-7 .widget {
+    flex: 0 0 calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-6 .widget {
+    flex: 0 0 calc(50% - #{$wg-grid-gutter-width-base});
+    max-width: calc(50% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-5 .widget {
+    flex: 0 0 calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-4 .widget {
+    flex: 0 0 calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-3 .widget {
+    flex: 0 0 calc(25% - #{$wg-grid-gutter-width-base});
+    max-width: calc(25% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-2 .widget {
+    flex: 0 0 calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-sm-1 .widget {
+    flex: 0 0 calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .wg-md-1,
+  .wg-md-2,
+  .wg-md-3,
+  .wg-md-4,
+  .wg-md-5,
+  .wg-md-6,
+  .wg-md-7,
+  .wg-md-8,
+  .wg-md-9,
+  .wg-md-10,
+  .wg-md-11,
+  .wg-md-12 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &.wg-equal-height-cols {
+      align-items: stretch;
+
+      .widget-content {
+        height: 100%;
+      }
+    }
+
+    .widget {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  .wg-md-12 .widget {
+    flex: 0 0 calc(100% - #{$wg-grid-gutter-width-base});
+    max-width: calc(100% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-11 .widget {
+    flex: 0 0 calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-10 .widget {
+    flex: 0 0 calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-9 .widget {
+    flex: 0 0 calc(75% - #{$wg-grid-gutter-width-base});
+    max-width: calc(75% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-8 .widget {
+    flex: 0 0 calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-7 .widget {
+    flex: 0 0 calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-6 .widget {
+    flex: 0 0 calc(50% - #{$wg-grid-gutter-width-base});
+    max-width: calc(50% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-5 .widget {
+    flex: 0 0 calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-4 .widget {
+    flex: 0 0 calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-3 .widget {
+    flex: 0 0 calc(25% - #{$wg-grid-gutter-width-base});
+    max-width: calc(25% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-2 .widget {
+    flex: 0 0 calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-md-1 .widget {
+    flex: 0 0 calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .wg-lg-1,
+  .wg-lg-2,
+  .wg-lg-3,
+  .wg-lg-4,
+  .wg-lg-5,
+  .wg-lg-6,
+  .wg-lg-7,
+  .wg-lg-8,
+  .wg-lg-9,
+  .wg-lg-10,
+  .wg-lg-11,
+  .wg-lg-12 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &.wg-equal-height-cols {
+      align-items: stretch;
+
+      .widget-content {
+        height: 100%;
+      }
+    }
+
+    .widget {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  .wg-lg-12 .widget {
+    flex: 0 0 calc(100% - #{$wg-grid-gutter-width-base});
+    max-width: calc(100% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-11 .widget {
+    flex: 0 0 calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-10 .widget {
+    flex: 0 0 calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-9 .widget {
+    flex: 0 0 calc(75% - #{$wg-grid-gutter-width-base});
+    max-width: calc(75% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-8 .widget {
+    flex: 0 0 calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-7 .widget {
+    flex: 0 0 calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-6 .widget {
+    flex: 0 0 calc(50% - #{$wg-grid-gutter-width-base});
+    max-width: calc(50% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-5 .widget {
+    flex: 0 0 calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-4 .widget {
+    flex: 0 0 calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-3 .widget {
+    flex: 0 0 calc(25% - #{$wg-grid-gutter-width-base});
+    max-width: calc(25% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-2 .widget {
+    flex: 0 0 calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-lg-1 .widget {
+    flex: 0 0 calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .wg-xl-1,
+  .wg-xl-2,
+  .wg-xl-3,
+  .wg-xl-4,
+  .wg-xl-5,
+  .wg-xl-6,
+  .wg-xl-7,
+  .wg-xl-8,
+  .wg-xl-9,
+  .wg-xl-10,
+  .wg-xl-11,
+  .wg-xl-12 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &.wg-equal-height-cols {
+      align-items: stretch;
+
+      .widget-content {
+        height: 100%;
+      }
+    }
+
+    .widget {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  .wg-xl-12 .widget {
+    flex: 0 0 calc(100% - #{$wg-grid-gutter-width-base});
+    max-width: calc(100% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-11 .widget {
+    flex: 0 0 calc(91.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(91.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-10 .widget {
+    flex: 0 0 calc(83.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(83.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-9 .widget {
+    flex: 0 0 calc(75% - #{$wg-grid-gutter-width-base});
+    max-width: calc(75% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-8 .widget {
+    flex: 0 0 calc(66.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(66.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-7 .widget {
+    flex: 0 0 calc(58.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(58.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-6 .widget {
+    flex: 0 0 calc(50% - #{$wg-grid-gutter-width-base});
+    max-width: calc(50% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-5 .widget {
+    flex: 0 0 calc(41.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(41.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-4 .widget {
+    flex: 0 0 calc(33.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(33.33333333% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-3 .widget {
+    flex: 0 0 calc(25% - #{$wg-grid-gutter-width-base});
+    max-width: calc(25% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-2 .widget {
+    flex: 0 0 calc(16.66666667% - #{$wg-grid-gutter-width-base});
+    max-width: calc(16.66666667% - #{$wg-grid-gutter-width-base});
+  }
+  .wg-xl-1 .widget {
+    flex: 0 0 calc(8.33333333% - #{$wg-grid-gutter-width-base});
+    max-width: calc(8.33333333% - #{$wg-grid-gutter-width-base});
+  }
+}
+
+
+//
+// Kill bottom margin
+//
+
+.wg-section-no-mb {
+  margin-bottom: -$wg-margin-bottom;
+
+  &.wg-panel-group {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,148 @@
+// Table of Contents
+//
+// Custom card
+// Navmenu
+// Widget
+
+
+//
+// Custom card
+//
+
+$card-title-link-light-color:               $gray-900 !default;
+$card-title-link-light-hover-color:         $link-color !default;
+$card-title-link-light-decoration:          none !default;
+$card-title-link-light-hover-decoration:    none !default;
+
+$card-title-link-dark-color:             #fff !default;
+$card-title-link-dark-hover-color:       #fff !default;
+$card-title-link-dark-decoration:        none !default;
+$card-title-link-dark-hover-decoration:  none !default;
+
+
+//
+// Navmenu
+//
+
+$navmenu-padding-x:                 1.25rem !default;
+$navmenu-padding-y:                 1rem !default;
+$navmenu-border-width:              1px !default;
+$navmenu-border-color:              rgba(0,0,0,.05) !default;
+$navmenu-border-radius:             $border-radius !default;
+$navmenu-spacer-y:                  $navmenu-padding-y !default;
+
+$navmenu-brand-padding-x:           1.25rem !default;
+$navmenu-brand-padding-y:           .5rem !default;
+$navmenu-brand-font-size:           $font-size-lg !default;
+
+$navmenu-header-margin-bottom:      .5rem !default;
+
+$navmenu-link-padding-x:            1.25rem !default;
+$navmenu-link-padding-y:            .5rem !default;
+$navmenu-link-sm-padding-x:         $navmenu-link-padding-x !default;
+$navmenu-link-sm-padding-y:         .25rem !default;
+
+$navmenu-light-color:                 rgba(0,0,0,.5) !default;
+$navmenu-light-hover-color:           rgba(0,0,0,.7) !default;
+$navmenu-light-active-color:          rgba(0,0,0,.9) !default;
+$navmenu-light-disabled-color:        rgba(0,0,0,.3) !default;
+$navmenu-light-header-color:          rgba(0,0,0,.4) !default;
+$navmenu-light-item-border-color:     rgba(0,0,0,.05) !default;
+$navmenu-light-item-hover-color:      $navmenu-light-item-border-color !default;
+$navmenu-light-divider-border-color:  rgba(0,0,0,.05) !default;
+
+$navmenu-dark-color:                  rgba(255,255,255,.5) !default;
+$navmenu-dark-hover-color:            rgba(255,255,255,.75) !default;
+$navmenu-dark-active-color:           rgba(255,255,255,1) !default;
+$navmenu-dark-disabled-color:         rgba(255,255,255,.25) !default;
+$navmenu-dark-header-color:           rgba(255,255,255,.4) !default;
+$navmenu-dark-item-border-color:      rgba(0,0,0,.15) !default;
+$navmenu-dark-item-hover-color:       $navmenu-dark-item-border-color !default;
+$navmenu-dark-divider-border-color:   rgba(0,0,0,.15) !default;
+
+
+//
+// Widget
+//
+
+$wg-margin-bottom:               $spacer !default;
+
+$wg-title-font-size:             1rem !default;
+$wg-title-font-weight:           $font-weight-bold !default;
+$wg-title-line-height:           1.1 !default;
+
+$wg-title-h1:                    $h1-font-size !default;
+$wg-title-h2:                    $h2-font-size !default;
+$wg-title-h3:                    $h3-font-size !default;
+$wg-title-h4:                    $h4-font-size !default;
+$wg-title-h5:                    $h5-font-size !default;
+$wg-title-h6:                    $h6-font-size !default;
+
+// Colors
+
+$wg-light-color:                 $gray-100 !default;
+$wg-light-border:                darken($wg-light-color, 5%) !default;
+
+$wg-dark-color:                  $gray-800 !default;
+$wg-dark-border:                 darken($wg-dark-color, 5%) !default;
+
+$wg-white-color:                 $white !default;
+$wg-white-border:                rgba(0,0,0,.125) !default;
+
+$wg-black-color:                 $black !default;
+$wg-black-border:                darken($wg-black-color, 5%) !default;
+
+$wg-blue-color:                  $blue !default;
+$wg-blue-border:                 darken($wg-blue-color, 5%) !default;
+
+$wg-indigo-color:                $indigo !default;
+$wg-indigo-border:               darken($wg-indigo-color, 5%) !default;
+
+$wg-purple-color:                $purple !default;
+$wg-purple-border:               darken($wg-purple-color, 5%) !default;
+
+$wg-pink-color:                  $pink !default;
+$wg-pink-border:                 darken($wg-pink-color, 5%) !default;
+
+$wg-red-color:                   $red !default;
+$wg-red-border:                  darken($wg-red-color, 5%) !default;
+
+$wg-orange-color:                $orange !default;
+$wg-orange-border:               darken($wg-orange-color, 5%) !default;
+
+$wg-yellow-color:                $yellow !default;
+$wg-yellow-border:               darken($wg-yellow-color, 5%) !default;
+
+$wg-green-color:                 $green !default;
+$wg-green-border:                darken($wg-green-color, 5%) !default;
+
+$wg-teal-color:                  $teal !default;
+$wg-teal-border:                 darken($wg-teal-color, 5%) !default;
+
+$wg-cyan-color:                  $cyan !default;
+$wg-cyan-border:                 darken($wg-cyan-color, 5%) !default;
+
+// Widget box
+
+$wg-box-padding:                 1.25rem !default;
+$wg-box-title-margin-bottom:     1rem !default;
+$wg-box-border-width:            1px !default;
+$wg-box-border-radius:           $border-radius !default;
+$wg-box-box-shadow:              0 1px 1px rgba(0,0,0,.05) !default;
+
+// Widget panel
+
+$wg-panel-content-padding:       1.25rem !default;
+$wg-panel-title-padding:         .75rem $wg-panel-content-padding !default;
+$wg-panel-content-bg:            #fff !default;
+$wg-panel-border-width:          1px !default;
+$wg-panel-border-radius:         $border-radius !default;
+$wg-panel-box-shadow:            0 1px 1px rgba(0,0,0,.05) !default;
+
+$wg-panel-sm-title-padding:      .3rem $wg-panel-content-padding !default;
+$wg-panel-sm-title-font-size:    .75rem !default;
+$wg-panel-sm-title-font-weight:  500 !default;
+
+// Widget grid
+
+$wg-grid-gutter-width-base:      30px !default;

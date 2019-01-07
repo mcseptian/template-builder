@@ -1,0 +1,64 @@
+<b:widget id='Header1' locked='true' title='Header (Header)' type='Header' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='displayUrl'/>
+    <b:widget-setting name='displayHeight'>0</b:widget-setting>
+    <b:widget-setting name='sectionWidth'>0</b:widget-setting>
+    <b:widget-setting name='useImage'>true</b:widget-setting>
+    <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+    <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+    <b:widget-setting name='displayWidth'>0</b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main' var='this'>
+    <b:comment>=== REPLACE ===</b:comment>
+    <b:if cond='data:imagePlacement == "REPLACE"'>
+      <div class='header image-placement-replace'>
+        <b:class cond='!data:image' name='no-image'/>
+        <b:class cond='data:image' name='has-image'/>
+        <div class='container'>
+          <b:if cond='data:image'>
+            <a expr:href='data:blog.homepageUrl'>
+              <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+            </a>
+          </b:if>
+        </div>
+      </div>
+    </b:if>
+    <b:comment>=== BEFORE_DESCRIPTION ===</b:comment>
+    <b:if cond='data:imagePlacement == "BEFORE_DESCRIPTION"'>
+      <div class='header image-placement-before-description'>
+        <b:class cond='!data:image' name='no-image'/>
+        <b:class cond='data:image' name='has-image'/>
+        <div class='container'>
+          <b:if cond='data:image'>
+            <a expr:href='data:blog.homepageUrl'>
+              <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+            </a>
+          </b:if>
+          <b:if cond='data:description'>
+            <p><data:description/></p>
+          </b:if>
+        </div>
+      </div>
+    </b:if>
+    <b:comment>=== BEHIND ===</b:comment>
+    <b:if cond='data:imagePlacement == "BEHIND"'>
+      <div class='header image-placement-behind'>
+        <b:attr cond='data:image' expr:value='"background-image: url(" + data:image + ");"' name='style'/>
+        <b:class cond='!data:image' name='no-image'/>
+        <b:class cond='data:image' name='has-image'/>
+        <div class='container'>
+          <b:if cond='data:title'>
+            <h1><a expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+          </b:if>
+          <b:if cond='data:description'>
+            <p><data:description/></p>
+          </b:if>
+        </div>
+      </div>
+    </b:if>
+  </b:includable>
+  <b:includable id='behindImageStyle'/>
+  <b:includable id='description'/>
+  <b:includable id='image'/>
+  <b:includable id='title'/>
+</b:widget>

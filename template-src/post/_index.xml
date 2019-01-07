@@ -1,0 +1,19 @@
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='blog-breadcrumb' var='post'>
+      <!--(bake blog-breadcrumb.xml)-->
+    </b:includable>
+    <b:includable id='blog-status-message' var='post'>
+      <!--(bake blog-status-message.xml)-->
+    </b:includable>
+    <b:includable id='blog-posts' var='post'>
+      <!--(bake blog-posts.xml)-->
+    </b:includable>
+    <b:includable id='blog-comments' var='post'>
+      <!--(bake blog-comments.xml)-->
+    </b:includable>
+    <b:includable id='blog-pager' var='post'>
+      <!--(bake blog-pager.xml)-->
+    </b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>

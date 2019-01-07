@@ -1,0 +1,14 @@
+<b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'>
+      &lt;p&gt;template-blogger is open source. It's hosted, developed, and maintained on GitHub.&lt;/p&gt;
+      &lt;a class="btn btn-sm btn-dark" href="https://github.com/mcseptian/template-blogger"&gt;&lt;i class="fa fa-github" aria-hidden="true"&gt;&lt;/i&gt; GitHub&lt;/a&gt;
+    </b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <div class='widget-content'>
+      <data:content/>
+    </div>
+  </b:includable>
+</b:widget>

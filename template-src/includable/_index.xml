@@ -1,0 +1,160 @@
+<b:comment>
+Head
+================================================= </b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='head.requiredMetaTags'>
+      <!--(bake head/head.requiredMetaTags.xml)-->
+    </b:includable>
+    <b:includable id='head.title'>
+      <!--(bake head/head.title.xml)-->
+    </b:includable>
+    <b:includable id='head.allHeadContent'>
+      <!--(bake head/head.allHeadContent.xml)-->
+    </b:includable>
+    <b:includable id='head.defaultTags'>
+      <!--(bake head/head.defaultTags.xml)-->
+    </b:includable>
+    <b:includable id='head.facebookTags'>
+      <!--(bake head/head.facebookTags.xml)-->
+    </b:includable>
+    <b:includable id='head.twitterTags'>
+      <!--(bake head/head.twitterTags.xml)-->
+    </b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
+<b:comment>
+Post
+================================================= </b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='post.header'>
+      <!--(bake post/post.header.xml)-->
+    </b:includable>
+    <b:includable id='post.footer'>
+      <!--(bake post/post.footer.xml)-->
+    </b:includable>
+    <b:includable id='post.title'>
+      <!--(bake post/post.title.xml)-->
+    </b:includable>
+    <b:includable id='post.authorName'>
+      <!--(bake post/post.authorName.xml)-->
+    </b:includable>
+    <b:includable id='post.authorImage'>
+      <!--(bake post/post.authorImage.xml)-->
+    </b:includable>
+    <b:includable id='post.datePublished'>
+      <!--(bake post/post.datePublished.xml)-->
+    </b:includable>
+    <b:includable id='post.dateUpdated'>
+      <!--(bake post/post.dateUpdated.xml)-->
+    </b:includable>
+    <b:includable id='post.numComments'>
+      <!--(bake post/post.numComments.xml)-->
+    </b:includable>
+    <b:includable id='post.labels'>
+      <!--(bake post/post.labels.xml)-->
+    </b:includable>
+    <b:includable id='post.share'>
+      <!--(bake post/post.share.xml)-->
+    </b:includable>
+    <b:includable id='post.featuredImage'>
+      <!--(bake post/post.featuredImage.xml)-->
+    </b:includable>
+    <b:includable id='post.featuredImageBg'>
+      <!--(bake post/post.featuredImageBg.xml)-->
+    </b:includable>
+    <b:includable id='post.snippet'>
+      <!--(bake post/post.snippet.xml)-->
+    </b:includable>
+    <b:includable id='post.body'>
+      <!--(bake post/post.body.xml)-->
+    </b:includable>
+    <b:includable id='post.jumpLink'>
+      <!--(bake post/post.jumpLink.xml)-->
+    </b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
+<b:comment>=== Remove default inclusions ===</b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Blog'>
+    <b:includable id='aboutPostAuthor'/>
+    <b:includable id='addComments'/>
+    <b:includable id='commentAuthorAvatar'/>
+    <b:includable id='commentDeleteIcon'/>
+    <b:includable id='commentForm'/>
+    <b:includable id='commentFormIframeSrc'/>
+    <b:includable id='commentItem'/>
+    <b:includable id='commentList'/>
+    <b:includable id='commentPicker'/>
+    <b:includable id='comments'/>
+    <b:includable id='commentsTitle'/>
+    <b:includable id='feedLinks'/>
+    <b:includable id='feedLinksBody'/>
+    <b:includable id='homePageLink'/>
+    <b:includable id='iframeComments'/>
+    <b:includable id='inlineAd'/>
+    <b:includable id='nextPageLink'/>
+    <b:includable id='post'/>
+    <b:includable id='postBody'/>
+    <b:includable id='postBodySnippet'/>
+    <b:includable id='postCommentsAndAd'/>
+    <b:includable id='postCommentsLink'/>
+    <b:includable id='postFooter'/>
+    <b:includable id='postFooterAuthorProfile'/>
+    <b:includable id='postHeader'/>
+    <b:includable id='postJumpLink'/>
+    <b:includable id='postMeta'/>
+    <b:includable id='postPagination'/>
+    <b:includable id='postTitle'/>
+    <b:includable id='previousPageLink'/>
+    <b:includable id='status-message'/>
+    <b:includable id='threadedCommentForm'/>
+    <b:includable id='threadedCommentJs'/>
+    <b:includable id='threadedComments'/>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
+<b:comment>
+Assets
+================================================= </b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='assets.requiredCss'>
+      <b:comment>=== Bootstrap ===</b:comment>
+      <style>
+      <!--(bake assets/css/bootstrap/bootstrap.min.css)-->
+      </style>
+      <b:comment>=== template-blogger ===</b:comment>
+      <style>
+      <!--(bake assets/css/template-blogger/template-blogger.min.css)-->
+      </style>
+      <b:comment>=== Font Awesome ===</b:comment>
+      <link crossorigin='anonymous' href='{{ blog.cdn.fontAwesome }}' integrity='{{ blog.cdn.fontAwesome_hash }}' rel='stylesheet'/>
+    </b:includable>
+    <b:includable id='assets.requiredJs'>
+      <b:comment>=== jQuery ===</b:comment>
+      <script crossorigin='anonymous' integrity='{{ blog.cdn.jquery_hash }}' src='{{ blog.cdn.jquery }}'/>
+      <b:comment>=== Popper.js ===</b:comment>
+      <script crossorigin='anonymous' integrity='{{ blog.cdn.popper_hash }}' src='{{ blog.cdn.popper }}'/>
+      <b:comment>=== Bootstrap ===</b:comment>
+      <script crossorigin='anonymous' integrity='{{ blog.cdn.bootstrapJs_hash }}' src='{{ blog.cdn.bootstrapJs }}'/>
+    </b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
+<b:comment>=== Icons ===</b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <b:includable id='assets.bloggerIcon'>
+      <!--(bake assets/icons/assets.bloggerIcon.xml)-->
+    </b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>

@@ -1,0 +1,12 @@
+<link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+
+<meta content='blogger' name='generator'/>
+<data:blog.feedLinks/>
+<data:blog.openIdOpTag/>
+<data:blog.meTag/>
+<b:if cond='data:blog.googleProfileUrl'>
+  <link expr:href='data:blog.googleProfileUrl' rel='publisher'/>
+</b:if>
+<b:if cond='data:blog.adultContent'>
+  <meta content='adult' name='rating'/>
+</b:if>

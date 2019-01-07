@@ -1,0 +1,362 @@
+/* ==========================================================================
+   Template details
+   ========================================================================== */
+
+/**
+ * Template Name : {{ blog.templateName }}
+ * Template URL  : {{ blog.templateUrl }}
+ * Author Name   : {{ blog.templateAuthorName }}
+ * Author URL    : {{ blog.templateAuthorUrl }}
+ * Date          : {{ blog.templateDate }}
+ * Version       : {{ blog.templateVersion }}
+ * License       : {{ blog.templateLicense }}
+ * License URL   : {{ blog.templateLicenseUrl }}
+ *
+ * template-blogger v1.0.0 (https://template-blogger.github.io)
+ */
+
+/**
+ * Style guides
+ *
+ * github.com/mdo/code-guide
+ * github.com/necolas/idiomatic-css#comments
+ */
+
+
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
+
+body {}
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+/* Base style
+   ========================================================================== */
+
+.header {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 350px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: #fff;
+  background-color: #777;
+}
+
+/**
+ * Title
+ */
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+}
+
+.header h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+.header h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/**
+ * Description
+ */
+
+.header p {
+  max-width: 700px;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* Image placement: REPLACE
+   ========================================================================== */
+
+/**
+ * Classes
+ *
+ * - `.image-placement-replace`
+ * - `.image-placement-replace.no-image`
+ * - `.image-placement-replace.has-image`
+ */
+
+.header.image-placement-replace.has-image img {
+  max-width: 100%;
+}
+
+/* Image placement: BEFORE_DESCRIPTION
+   ========================================================================== */
+
+/**
+ * Classes
+ *
+ * - `.image-placement-before-description`
+ * - `.image-placement-before-description.no-image`
+ * - `.image-placement-before-description.has-image`
+ */
+
+.header.image-placement-before-description.has-image img {
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Image placement: BEHIND
+   ========================================================================== */
+
+/**
+ * Classes
+ *
+ * - `.image-placement-behind`
+ * - `.image-placement-behind.no-image`
+ * - `.image-placement-behind.has-image`
+ */
+
+.header.image-placement-behind {
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
+.header.image-placement-behind.has-image {
+  z-index: 1;
+}
+.header.image-placement-behind.has-image::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25));
+}
+
+
+/* ==========================================================================
+   Wrapping element for .main and .sidebar
+   ========================================================================== */
+
+.main-and-sidebar {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f8f9fa;
+}
+
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+.main {}
+
+/* Breadcrumb
+   ========================================================================== */
+
+.blog-breadcrumb {
+  margin-bottom: 1rem;
+}
+
+.blog-breadcrumb .breadcrumb {
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,.05);
+}
+
+.blog-breadcrumb .breadcrumb-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+.blog-breadcrumb .breadcrumb-item a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.blog-breadcrumb .breadcrumb-item.active {
+  color: #868e96;
+}
+
+.blog-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  color: #868e96;
+  content: "/";
+}
+.blog-breadcrumb .breadcrumb-item.active + .breadcrumb-item.active::before {
+  color: #868e96;
+  content: ":";
+}
+
+/* Status message
+   ========================================================================== */
+
+.blog-status-message {
+  margin-bottom: 1rem;
+}
+
+.blog-status-message .alert {
+  margin-bottom: 0;
+}
+
+.blog-status-message .search-label,
+.blog-status-message .search-query {
+  font-weight: bold;
+}
+
+/* Posts
+   ========================================================================== */
+
+.blog-posts {}
+
+/**
+ * Compose mode
+ */
+
+/* Images */
+
+.post-compose-style .separator img,
+.post-compose-style .tr-caption-container img {
+  max-width: 100%;
+}
+
+.post-compose-style .tr-caption-container .tr-caption {
+  padding: .5rem 0;
+  font-size: 90%;
+  color: #868e96;
+}
+
+/* Tables */
+
+.post-compose-style table:not(.table):not(.tr-caption-container) {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+.post-compose-style table:not(.table):not(.tr-caption-container) th,
+.post-compose-style table:not(.table):not(.tr-caption-container) td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border: 1px solid #e5e5e5;
+}
+
+.post-compose-style table:not(.table):not(.tr-caption-container) thead th {
+  vertical-align: bottom;
+}
+
+.post-compose-style table:not(.table):not(.tr-caption-container) thead th,
+.post-compose-style table:not(.table):not(.tr-caption-container) thead td {
+  border-bottom-width: 2px;
+}
+
+.post-compose-style table:not(.table):not(.tr-caption-container) tbody + tbody {
+  border-top: 2px solid #e5e5e5;
+}
+
+/* Blockquotes */
+
+.post-compose-style blockquote:not(.blockquote) {
+  padding: 0.75rem 1rem;
+  margin: 0 0 1rem;
+  border-left: 5px solid #e5e5e5;
+}
+
+.post-compose-style blockquote:not(.blockquote) footer {
+  display: block;
+  font-size: 80%;
+  color: #868e96;
+}
+.post-compose-style blockquote:not(.blockquote) footer::before {
+  content: "\2014 \00A0";
+}
+
+/* Comments
+   ========================================================================== */
+
+.blog-comments {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Pager
+   ========================================================================== */
+
+.blog-pager .btn {
+  border-radius: 2rem;
+}
+
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.sidebar {}
+
+
+/* ==========================================================================
+   Widget block (1)
+   ========================================================================== */
+
+.widget-block-1 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #32363a;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  font-size: 85%;
+  color: #777;
+  text-align: center;
+  background-color: #eee;
+}
+
+.footer a {
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.footer p {
+  margin-bottom: 1rem;
+}
+.footer p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-links {
+  padding-left: 0;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+.footer-links li {
+  display: inline-block;
+}
+.footer-links li:not(:last-child) {
+  margin-right: 5px;
+}

@@ -1,0 +1,11 @@
+<b:if cond='data:post.allowComments'>
+  <a b:whitespace='remove' expr:class='data:linkClass' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+    <b:if cond='data:post.commentSource != 1'>
+      <b:message name='messages.numberOfComments'>
+        <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+      </b:message>
+    <b:else/>
+      <data:messages.comments/>
+    </b:if>
+  </a>
+</b:if>

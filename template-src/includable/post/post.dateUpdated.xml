@@ -1,0 +1,7 @@
+<time expr:class='data:timeClass' expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
+  <b:if cond='data:customFormat'>
+    <b:eval expr='format(data:post.lastUpdated, data:customFormat)'/>
+  <b:else/>
+    <data:post.lastUpdated/>
+  </b:if>
+</time>

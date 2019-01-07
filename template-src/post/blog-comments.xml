@@ -1,0 +1,38 @@
+<b:loop values='data:posts' var='post'>
+  <b:if cond='data:post.allowComments'>
+
+    <div class='blog-comments' id='comments'>
+
+      <h1 class='blog-comments-title'><data:messages.comments/></h1>
+
+      <b:if cond='data:post.commentSource == 1'>
+
+        <div class='cmt_iframe_holder' expr:data-href='data:post.url'/>
+
+      <b:else/>
+
+        <div class='alert alert-info mb-0' role='alert'>
+          <h5 class='alert-heading mb-3'>
+            <i aria-hidden='true' class='fa fa-google-plus fa-lg'/>
+            <span class='sr-only'>Google+</span>
+          </h5>
+          <p class='mb-1'><strong>To turn on Google+ comments:</strong></p>
+          <ol class='pl-4 mb-3'>
+            <li>Make sure you're using Google+ as your profile and your blog is public.</li>
+            <li>In the left menu, click <strong>Settings &gt; Posts, comments and sharing</strong>.</li>
+            <li>Under "Google+ Comments," choose <strong>Yes</strong>. At the top right, click Save settings.</li>
+          </ol>
+          <p class='mb-0'>
+            <i aria-hidden='true' class='fa fa-info-circle'/>
+            <a class='alert-link' href='https://support.google.com/blogger/answer/1752748' target='_blank'>
+              <data:messages.learnMore/>
+            </a>
+          </p>
+        </div>
+
+      </b:if>
+
+    </div>
+
+  </b:if>
+</b:loop>

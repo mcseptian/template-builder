@@ -1,6 +1,8 @@
 # template-blogger
-## simple basic featuring bootstrap 4 & fontawesome 5 
-Template for [Black Forest](https://mcseptian.blogspot.co.id/)
+Template builder for Blogger CMS
+
+## Inspiration
+Template framework by [Bootsblogger](https://github.com/bootsblogger/bootsblogger.git)
 
 ## Dependency
 - [Bootstrap 4](https://github.com/twbs/bootstrap)
@@ -18,7 +20,6 @@ Template for [Black Forest](https://mcseptian.blogspot.co.id/)
 - Lainnya cek history...
 
 ## Copyright and license
-
 - Bootstrap Framework copyright the [Bootstrap Authors](https://github.com/twbs/bootstrap/graphs/contributors) and [Twitter, Inc.](https://twitter.com) released under the [MIT License](https://github.com/twbs/bootstrap/blob/master/LICENSE).
 - Font Awesome Icons — CC BY 4.0 License
   - In the Font Awesome Free download, the CC BY 4.0 license applies to all icons packaged as .svg and .js files types.

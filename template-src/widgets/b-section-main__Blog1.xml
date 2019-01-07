@@ -1,0 +1,50 @@
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+    <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+    <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+    <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+    <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
+    <b:widget-setting name='showAuthor'>true</b:widget-setting>
+    <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+    <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+    <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+    <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+    <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+    <b:widget-setting name='showLabels'>true</b:widget-setting>
+    <b:widget-setting name='showLocation'>true</b:widget-setting>
+    <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+    <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+    <b:widget-setting name='showBacklinks'>true</b:widget-setting>
+    <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+    <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+    <b:widget-setting name='showReactions'>true</b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+
+    <b:comment>=== Metadata JSON ===</b:comment>
+    <b:if cond='data:posts.notEmpty'>
+      <div class='script-application-ld-json' id='script-application-ld-json'>
+        <b:loop values='data:posts' var='post'>
+          <b:include name='postMetadataJSON'/>
+        </b:loop>
+      </div>
+    </b:if>
+
+    <b:comment>=== Breadcrumb ===</b:comment>
+    <b:include cond='!data:view.isHomepage' name='blog-breadcrumb'/>
+
+    <b:comment>=== Status message ===</b:comment>
+    <b:include name='blog-status-message'/>
+
+    <b:comment>=== Posts ===</b:comment>
+    <b:include cond='data:posts.notEmpty' name='blog-posts'/>
+
+    <b:comment>=== Comments ===</b:comment>
+    <b:include cond='data:view.isPost' name='blog-comments'/>
+
+    <b:comment>=== Pager ===</b:comment>
+    <b:include cond='data:posts.notEmpty and !data:view.isPage' name='blog-pager'/>
+
+  </b:includable>
+</b:widget>
