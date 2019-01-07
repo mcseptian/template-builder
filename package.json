@@ -11,7 +11,7 @@
     "template-blogger",
     "blogspot"
   ],
-  "homepage": "https://template-blogger.github.io",
+  "homepage": "https://mcseptian.github.io/template-blogger",
   "author": "Septian Adi",
   "scripts": {
     "docs-lint": "htmllint --rc docs/.htmllintrc _gh_pages/*.html _gh_pages/**/*.html",
