@@ -2,14 +2,15 @@
 Template builder for Blogger CMS
 
 ## Inspiration
-Template framework by [Bootsblogger](https://github.com/bootsblogger/bootsblogger.git)
+Template Builder Framework by [Bootsblogger](https://github.com/bootsblogger/bootsblogger.git)
 
 ## Dependency
 - [Bootstrap 4](https://github.com/twbs/bootstrap)
 - [Font Awesome 5](https://github.com/FortAwesome/Font-Awesome)
 - [Classiejs](https://github.com/desandro/classie)
 - [Modernizr](https://github.com/Modernizr/Modernizr)
-- [Highlightjs](https://github.com/isagalaev/highlight.js)
+- [Highlight.js](https://github.com/isagalaev/highlight.js)
+- [Normalize.css](https://github.com/necolas/normalize.css)
 
 ## Widget `included in theme`
 - Page List
