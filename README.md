@@ -1,4 +1,4 @@
-# template-blogger
+# Build your very own template
 Template builder for Blogger CMS
 
 ## Inspiration
